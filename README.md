@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Compliance Crm Test
 ================
 
@@ -48,3 +49,7 @@ Credits
 
 License
 -------
+=======
+compliance-crm-test
+===================
+>>>>>>> 9cc20f1a72e4d7ba2f18cc809bc82515ad1f7e4f
