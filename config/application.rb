@@ -17,6 +17,8 @@ Bundler.require(*Rails.groups)
 module ComplianceCrmTest
   class Application < Rails::Application
 
+    secrets.domain_name = "compliancefiscal.com.br"
+
     config.generators do |g|
       g.test_framework :rspec,
         fixtures: true,
