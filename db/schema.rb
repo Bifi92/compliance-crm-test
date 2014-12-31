@@ -11,7 +11,79 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141222153220) do
+ActiveRecord::Schema.define(version: 20141230205737) do
+
+  create_table "cidades", force: :cascade do |t|
+    t.integer  "estado_id"
+    t.string   "nome"
+    t.string   "ibge"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "cidades", ["estado_id"], name: "index_cidades_on_estado_id"
+
+  create_table "countries", force: :cascade do |t|
+    t.string   "nome"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "estados", force: :cascade do |t|
+    t.integer  "country_id"
+    t.string   "nome"
+    t.string   "sigla"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "estados", ["country_id"], name: "index_estados_on_country_id"
+
+  create_table "leads", force: :cascade do |t|
+    t.string   "saudacao"
+    t.string   "empresa"
+    t.string   "nome"
+    t.string   "sobrenome"
+    t.string   "titulo"
+    t.string   "status"
+    t.text     "descricao"
+    t.string   "erp"
+    t.string   "solucao_fiscal"
+    t.integer  "country_id"
+    t.integer  "estado_id"
+    t.integer  "cidade_id"
+    t.string   "rua"
+    t.string   "cep"
+    t.string   "origem"
+    t.string   "reconhecido"
+    t.string   "classificacao"
+    t.text     "motivo_desqualificacao"
+    t.string   "orcamento_aprovado"
+    t.string   "convertido"
+    t.date     "data_da_conversao"
+    t.string   "fax"
+    t.string   "celular"
+    t.string   "telefone"
+    t.string   "recusar_telefonemas"
+    t.string   "email"
+    t.string   "recusar_emails"
+    t.string   "site"
+    t.string   "qtde_funcionarios"
+    t.string   "qtde_cnpj"
+    t.string   "setor"
+    t.string   "receita_anual"
+    t.text     "tipo_interesse"
+    t.text     "produtos_interesse"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.integer  "criador_user_id"
+    t.integer  "proprietario_user_id"
+    t.integer  "ultimoalterar_user_id"
+  end
+
+  add_index "leads", ["cidade_id"], name: "index_leads_on_cidade_id"
+  add_index "leads", ["country_id"], name: "index_leads_on_country_id"
+  add_index "leads", ["estado_id"], name: "index_leads_on_estado_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
