@@ -7,6 +7,10 @@ class Lead < ActiveRecord::Base
   validates_presence_of :empresa, :sobrenome, :status
   validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i}, :allow_blank => true
 
+  def to_s
+    "#{nome} #{sobrenome}".strip
+  end  
+
   def tipos_sim_nao
   	[['Sim','Sim'],['Não','Não']]
   end
