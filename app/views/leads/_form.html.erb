@@ -1,0 +1,114 @@
+<%= simple_form_for(@lead) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+
+  <br><h4><strong> Informações do lead <strong></h4>
+
+  <br>
+    <strong>
+      <%= "Proprietário: #{User.find_by_id(@lead.proprietario_user_id.nil? ? current_user.id : @lead.proprietario_user_id
+).email}" %>
+    </strong>
+    <br>
+  </br>
+
+    <%= f.input :saudacao, collection: @lead.tipos_saudacao, prompt: "Escolha a saudação" %>
+    <%= f.input :nome %>
+    <%= f.input :sobrenome %>
+    <%= f.input :empresa %>
+    <%= f.input :titulo %>
+    <%= f.input :status, collection: @lead.tipos_status, prompt: "Escolha o status" %>
+    <%= f.input :fax %>
+    <%= f.input :celular %>
+    <%= f.input :telefone %>
+    <%= f.input :recusar_telefonemas, collection: @lead.tipos_sim_nao, prompt: "Recusar telefonemas?" %>
+    <%= f.input :email %>
+    <%= f.input :recusar_emails, collection: @lead.tipos_sim_nao, prompt: "Recusar e-mails?" %>
+    <%= f.input :classificacao, collection: @lead.tipos_classificacao, prompt: "Escolha a classificação" %>
+
+    <br><h4><strong> Informações de endereço <strong></h4><br></br>
+
+    <%= f.association :country, label: "País", label_method: :nome, prompt: "Escolha o pais"%>
+    <%= f.association :estado, label_method: :nome, collection: [], prompt: "Escolha o estado" %>
+    <%= f.association :cidade, label_method: :nome, collection: [], prompt: "Escolha a cidade" %>
+    <%= f.input :rua %>
+    <%= f.input :cep %>
+    <%= f.input :site %>
+
+    <br><h4><strong> Informações adicionais <strong></h4><br></br>
+
+    <%= f.input :erp, collection: @lead.tipos_erp, prompt: "Escolha o ERP" %>
+    <%= f.input :solucao_fiscal, collection: @lead.tipos_solucao_fiscal, prompt: "Escolha a solução fiscal" %>
+    <%= f.input :origem, collection: @lead.tipos_origem, prompt: "Escolha a origem" %>
+    <%= f.input :qtde_funcionarios %>
+    <%= f.input :qtde_cnpj %>
+    <%= f.input :setor, collection: @lead.tipos_setor, prompt: "Escolha o setor" %>
+    <%= f.input :receita_anual %>
+    <%= f.input :tipo_interesse %>
+    <%= f.input :produtos_interesse %>
+
+    <br><h4><strong> Informações de descrição <strong></h4><br></br>
+
+    <%= f.input :descricao %>
+
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+   $("#lead_country_id").change(function() {
+      getEstadosṔorPais("id="+$("#lead_country_id").val());
+    });
+  });
+
+  function getEstadosṔorPais(id) {
+    $.getJSON("/estados_por_pais", id, function(j) {
+      var options = '<option value="">Escolha o estado</option>';
+      $.each(j.est, function(i, item) {
+        options += '<option value="' + item.id + '">' + item.n + '</option>';
+      });
+      $("#lead_estado_id").html(options);
+    });
+  }
+</script>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+   $("#lead_estado_id").change(function() {
+      getCidadesṔorEstado("id="+$("#lead_estado_id").val());
+    });
+  });
+
+  function getCidadesṔorEstado(id) {
+    $.getJSON("/cidades_por_estado", id, function(j) {
+      var options = '<option value="">Escolha a cidade</option>';
+      $.each(j.cid, function(i, item) {
+        options += '<option value="' + item.id + '">' + item.n + '</option>';
+      });
+      $("#lead_cidade_id").html(options);
+    });
+  }
+</script>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+   $("#lead_country_id").change(function() {
+      getCidadesNil("id="+$("#lead_country_id").val());
+    });
+  });
+
+  function getCidadesNil(id) {
+    $.getJSON("/cidades_nil", id, function(j) {
+      var options = '<option value="">Escolha a cidade</option>';
+      $.each(j.cid, function(i, item) {
+        options += '<option value="' + item.id + '">' + item.n + '</option>';
+      });
+      $("#lead_cidade_id").html(options);
+    });
+  }
+</script>
