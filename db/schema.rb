@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141230205737) do
+ActiveRecord::Schema.define(version: 20150102212114) do
 
   create_table "cidades", force: :cascade do |t|
     t.integer  "estado_id"
@@ -22,6 +22,47 @@ ActiveRecord::Schema.define(version: 20141230205737) do
   end
 
   add_index "cidades", ["estado_id"], name: "index_cidades_on_estado_id"
+
+  create_table "conta", force: :cascade do |t|
+    t.string   "nome"
+    t.string   "razao_social"
+    t.string   "fantasia"
+    t.string   "cpf_cnpj"
+    t.integer  "qtde_funcionarios"
+    t.string   "propriedade"
+    t.string   "tipo_conta"
+    t.string   "setor"
+    t.float    "receita_anual"
+    t.string   "fax"
+    t.string   "telefone"
+    t.string   "email_nfe"
+    t.string   "site"
+    t.string   "inscricao_municipal"
+    t.string   "inscricao_estadual"
+    t.string   "bairro_cobr"
+    t.string   "rua_cobr"
+    t.string   "numero_cobr"
+    t.string   "complemento_cobr"
+    t.string   "cep_cobr"
+    t.string   "bairro_entr"
+    t.string   "rua_entr"
+    t.string   "numero_entr"
+    t.string   "complemento_entr"
+    t.string   "cep_entr"
+    t.string   "descricao"
+    t.boolean  "excluida"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.integer  "criador_user_id"
+    t.integer  "proprietario_user_id"
+    t.integer  "ultimoalterar_user_id"
+    t.integer  "countrycobr_country_id"
+    t.integer  "estadocobr_estado_id"
+    t.integer  "cidadecobr_cidade_id"
+    t.integer  "countryentr_country_id"
+    t.integer  "estadoentr_estado_id"
+    t.integer  "cidadeentr_cidade_id"
+  end
 
   create_table "countries", force: :cascade do |t|
     t.string   "nome"
@@ -68,10 +109,10 @@ ActiveRecord::Schema.define(version: 20141230205737) do
     t.string   "email"
     t.string   "recusar_emails"
     t.string   "site"
-    t.string   "qtde_funcionarios"
-    t.string   "qtde_cnpj"
+    t.integer  "qtde_funcionarios"
+    t.integer  "qtde_cnpj"
     t.string   "setor"
-    t.string   "receita_anual"
+    t.float    "receita_anual"
     t.text     "tipo_interesse"
     t.text     "produtos_interesse"
     t.datetime "created_at",             null: false

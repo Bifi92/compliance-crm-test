@@ -30,6 +30,7 @@ class LeadsController < ApplicationController
   end
 
   def update
+    @lead.ultimoalterar_user_id = current_user.id
     @lead.update(lead_params)
     respond_with(@lead)
   end

@@ -3,15 +3,15 @@
 
   <div class="form-inputs">
 
-  <br><h4><strong> Informações do lead <strong></h4>
+    <br><h4><strong> Informações do lead <strong></h4>
 
-  <br>
-    <strong>
-      <%= "Proprietário: #{User.find_by_id(@lead.proprietario_user_id.nil? ? current_user.id : @lead.proprietario_user_id
-).email}" %>
-    </strong>
     <br>
-  </br>
+      <strong>
+        <%= "Proprietário: #{User.find_by_id(@lead.proprietario_user_id.nil? ? current_user.id : @lead.proprietario_user_id
+  ).email}" %>
+      </strong>
+      <br>
+    </br>
 
     <%= f.input :saudacao, collection: @lead.tipos_saudacao, prompt: "Escolha a saudação" %>
     <%= f.input :nome %>

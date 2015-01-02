@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :conta
+
   resources :leads
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
