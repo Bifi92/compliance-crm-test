@@ -40,6 +40,9 @@ class LeadsController < ApplicationController
     respond_with(@lead)
   end
 
+  def convert
+  end  
+
   private
     def set_lead
       @lead = Lead.find(params[:id])
