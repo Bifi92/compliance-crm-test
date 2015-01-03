@@ -1,6 +1,15 @@
-<h1>Editing Lead</h1>
+<div class="col-md-10">
+	<div style="margin-bottom: 10px; margin-top: 10px">
+		<%= link_to 'Show', @lead, :class => 'btn btn-default' %>
+	  <%= link_to 'Back', leads_path, :class => 'btn btn-default' %>
+	</div>
 
-<%= render 'form' %>
-
-<%= link_to 'Show', @lead %> |
-<%= link_to 'Back', leads_path %>
+	<div class="panel panel-primary">
+		<div class="panel-heading text-center">
+				<h4>Editing Lead</h4>
+		</div>
+		<div class="panel-body">
+			<%= render 'form' %>
+		</div>
+	</div>
+</div>
