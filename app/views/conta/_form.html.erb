@@ -24,11 +24,11 @@
 
     <br><h4><strong> Informações adicionais <strong></h4><br></br>
 
-    <%= f.input :qtde_funcionarios, label: "Quantidade de funcionários" %>
+    <%= f.input :qtde_funcionarios, label: "Quantidade de funcionários", html5: true %>
     <%= f.input :propriedade, collection: @contum.tipos_propriedade, prompt: "Escolha o tipo de propriedade" %>
     <%= f.input :tipo_conta, collection: @contum.tipos_conta, label: "Tipo de conta", prompt: "Escolha o tipo de conta" %>
     <%= f.input :setor, collection: @contum.tipos_setor, prompt: "Escolha o setor" %>
-    <%= f.input :receita_anual %>
+    <%= f.input :receita_anual, as: :float %>
     <%= f.input :inscricao_municipal, label: "Inscrição municipal" %>
     <%= f.input :inscricao_estadual, label: "Inscrição estadual" %>
     <%= f.association :countrycobr_country, label: "País de cobrança", label_method: :nome, prompt: "Escolha o pais"%>

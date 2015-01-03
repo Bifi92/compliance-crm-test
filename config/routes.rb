@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :contatos
+
   resources :conta
 
   resources :leads

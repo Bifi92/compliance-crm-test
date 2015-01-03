@@ -1,5 +1,7 @@
 class Contum < ActiveRecord::Base
 
+  has_many :contato
+
   belongs_to :countrycobr_country,
     :class_name => "Country",
     :foreign_key => "countrycobr_country_id"
@@ -26,10 +28,9 @@ class Contum < ActiveRecord::Base
 
   validates_presence_of :nome
   validates :email_nfe, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i}, :allow_blank => true
-  validates_numericality_of :receita_anual, :qtde_funcionarios, :cpf_cnpj, :allow_blank => true
 
   def to_s
-    "#{nome} #{sobrenome}".strip
+    "#{nome}".strip
   end 
 
   def tipos_propriedade
