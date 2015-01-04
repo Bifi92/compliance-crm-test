@@ -5,6 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
 user = CreateAdminService.new.call
 puts 'CREATED ADMIN USER: ' << user.email
 
@@ -31,3 +32,4 @@ puts 'CREATED ADMIN USER: ' << user.email
       Cidade.create!(:estado_id => Estado.where(:sigla => uf).take.id, :nome => nome, :ibge => ibge)
     end
   end
+  

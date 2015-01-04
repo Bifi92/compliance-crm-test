@@ -31,4 +31,7 @@ RailsAdmin.config do |config|
     # history_index
     # history_show
   end
+
+  RailsAdmin.config {|c| c.label_methods << :to_s}
+
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141230205737) do
+ActiveRecord::Schema.define(version: 20150103015349) do
 
   create_table "cidades", force: :cascade do |t|
     t.integer  "estado_id"
@@ -22,6 +22,105 @@ ActiveRecord::Schema.define(version: 20141230205737) do
   end
 
   add_index "cidades", ["estado_id"], name: "index_cidades_on_estado_id"
+
+  create_table "conta", force: :cascade do |t|
+    t.string   "nome"
+    t.string   "razao_social"
+    t.string   "fantasia"
+    t.string   "cpf_cnpj"
+    t.integer  "qtde_funcionarios"
+    t.string   "propriedade"
+    t.string   "tipo_conta"
+    t.string   "setor"
+    t.float    "receita_anual"
+    t.string   "fax"
+    t.string   "telefone"
+    t.string   "email_nfe"
+    t.string   "site"
+    t.string   "inscricao_municipal"
+    t.string   "inscricao_estadual"
+    t.string   "bairro_cobr"
+    t.string   "rua_cobr"
+    t.string   "numero_cobr"
+    t.string   "complemento_cobr"
+    t.string   "cep_cobr"
+    t.string   "bairro_entr"
+    t.string   "rua_entr"
+    t.string   "numero_entr"
+    t.string   "complemento_entr"
+    t.string   "cep_entr"
+    t.string   "descricao"
+    t.boolean  "excluida"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.integer  "criador_user_id"
+    t.integer  "proprietario_user_id"
+    t.integer  "ultimoalterar_user_id"
+    t.integer  "countrycobr_country_id"
+    t.integer  "estadocobr_estado_id"
+    t.integer  "cidadecobr_cidade_id"
+    t.integer  "countryentr_country_id"
+    t.integer  "estadoentr_estado_id"
+    t.integer  "cidadeentr_cidade_id"
+  end
+
+  create_table "contatos", force: :cascade do |t|
+    t.integer  "contum_id"
+    t.integer  "contato_id"
+    t.string   "saudacao"
+    t.string   "sexo"
+    t.string   "titulo"
+    t.string   "nome"
+    t.string   "sobrenome"
+    t.date     "data_nascimento"
+    t.string   "empresa"
+    t.string   "departamento"
+    t.string   "cpf"
+    t.text     "descricao"
+    t.string   "email_pessoal"
+    t.string   "email_corporativo"
+    t.string   "nome_assistente"
+    t.string   "telefone_assistente"
+    t.date     "data_devolucao_email"
+    t.text     "motivo_devolucao_email"
+    t.boolean  "recusar_emails"
+    t.string   "fax"
+    t.boolean  "recusar_fax"
+    t.string   "telefone_residencial"
+    t.string   "telefone_comercial"
+    t.string   "celular"
+    t.string   "outro_telefone"
+    t.boolean  "recusar_telefonemas"
+    t.string   "bairro_corre"
+    t.string   "rua_corre"
+    t.string   "numero_corre"
+    t.string   "complemento_corre"
+    t.string   "cep_corre"
+    t.string   "bairro_corpo"
+    t.string   "logradouro"
+    t.string   "rua_corpo"
+    t.string   "numero_corpo"
+    t.string   "complemento_corpo"
+    t.string   "cep_corpo"
+    t.string   "esporte_preferido"
+    t.string   "hobby"
+    t.boolean  "excluido"
+    t.string   "origem_lead"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.integer  "criador_user_id"
+    t.integer  "proprietario_user_id"
+    t.integer  "ultimoalterar_user_id"
+    t.integer  "countrycorre_country_id"
+    t.integer  "estadocorre_estado_id"
+    t.integer  "cidadecorre_cidade_id"
+    t.integer  "countrycorpo_country_id"
+    t.integer  "estadocorpo_estado_id"
+    t.integer  "cidadecorpo_cidade_id"
+  end
+
+  add_index "contatos", ["contato_id"], name: "index_contatos_on_contato_id"
+  add_index "contatos", ["contum_id"], name: "index_contatos_on_contum_id"
 
   create_table "countries", force: :cascade do |t|
     t.string   "nome"
@@ -68,10 +167,10 @@ ActiveRecord::Schema.define(version: 20141230205737) do
     t.string   "email"
     t.string   "recusar_emails"
     t.string   "site"
-    t.string   "qtde_funcionarios"
-    t.string   "qtde_cnpj"
+    t.integer  "qtde_funcionarios"
+    t.integer  "qtde_cnpj"
     t.string   "setor"
-    t.string   "receita_anual"
+    t.float    "receita_anual"
     t.text     "tipo_interesse"
     t.text     "produtos_interesse"
     t.datetime "created_at",             null: false
