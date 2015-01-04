@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150103015349) do
+ActiveRecord::Schema.define(version: 20150104032719) do
 
   create_table "cidades", force: :cascade do |t|
     t.integer  "estado_id"
@@ -108,7 +108,6 @@ ActiveRecord::Schema.define(version: 20150103015349) do
     t.string   "origem_lead"
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
-    t.integer  "criador_user_id"
     t.integer  "proprietario_user_id"
     t.integer  "ultimoalterar_user_id"
     t.integer  "countrycorre_country_id"
@@ -117,6 +116,7 @@ ActiveRecord::Schema.define(version: 20150103015349) do
     t.integer  "countrycorpo_country_id"
     t.integer  "estadocorpo_estado_id"
     t.integer  "cidadecorpo_cidade_id"
+    t.integer  "criador_user_id"
   end
 
   add_index "contatos", ["contato_id"], name: "index_contatos_on_contato_id"
