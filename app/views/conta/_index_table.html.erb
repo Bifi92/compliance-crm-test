@@ -1,0 +1,73 @@
+<% @conta.each do |contum| %>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Razao social</th>
+        <th>Fantasia</th>
+        <th>Cpf cnpj</th>
+        <th>Qtde funcionarios</th>
+        <th>Propriedade</th>
+        <th>Tipo conta</th>
+        <th>Setor</th>
+        <th>Receita anual</th>
+        <th>Fax</th>
+        <th>Telefone</th>
+        <th>Email nfe</th>
+        <th>Site</th>
+        <th>Inscricao municipal</th>
+        <th>Inscricao estadual</th>
+        <th>Bairro cobr</th>
+        <th>Rua cobr</th>
+        <th>Numero cobr</th>
+        <th>Complemento cobr</th>
+        <th>Cep cobr</th>
+        <th>Bairro entr</th>
+        <th>Rua entr</th>
+        <th>Numero entr</th>
+        <th>Complemento entr</th>
+        <th>Cep entr</th>
+        <th>Descricao</th>
+        <th>Excluida</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+          <td><%= contum.nome %></td>
+          <td><%= contum.razao_social %></td>
+          <td><%= contum.fantasia %></td>
+          <td><%= contum.cpf_cnpj %></td>
+          <td><%= contum.qtde_funcionarios %></td>
+          <td><%= contum.propriedade %></td>
+          <td><%= contum.tipo_conta %></td>
+          <td><%= contum.setor %></td>
+          <td><%= contum.receita_anual %></td>
+          <td><%= contum.fax %></td>
+          <td><%= contum.telefone %></td>
+          <td><%= contum.email_nfe %></td>
+          <td><%= contum.site %></td>
+          <td><%= contum.inscricao_municipal %></td>
+          <td><%= contum.inscricao_estadual %></td>
+          <td><%= contum.bairro_cobr %></td>
+          <td><%= contum.rua_cobr %></td>
+          <td><%= contum.numero_cobr %></td>
+          <td><%= contum.complemento_cobr %></td>
+          <td><%= contum.cep_cobr %></td>
+          <td><%= contum.bairro_entr %></td>
+          <td><%= contum.rua_entr %></td>
+          <td><%= contum.numero_entr %></td>
+          <td><%= contum.complemento_entr %></td>
+          <td><%= contum.cep_entr %></td>
+          <td><%= contum.descricao %></td>
+          <td><%= contum.excluida %></td>
+
+          <td><%= link_to 'Show', contum, :class => 'btn btn-default btn-sm' %></td>
+          <td><%= link_to 'Edit', edit_contum_path(contum), :class => 'btn btn-default btn-sm' %></td>
+          <td><%= link_to 'Destroy', contum, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-default btn-sm' %></td>
+        </tr>
+      
+    </tbody>
+  </table>
+<% end %>
