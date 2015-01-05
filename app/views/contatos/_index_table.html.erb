@@ -1,101 +1,100 @@
-<% @contatos.each do |contato| %>
-  <table class="table">
-    <thead>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Contum</th>
+      <th>Contato</th>
+      <th>Saudacao</th>
+      <th>Sexo</th>
+      <th>Titulo</th>
+      <th>Nome</th>
+      <th>Sobrenome</th>
+      <th>Data nascimento</th>
+      <th>Empresa</th>
+      <th>Departamento</th>
+      <th>Cpf</th>
+      <th>Descricao</th>
+      <th>Email pessoal</th>
+      <th>Email corporativo</th>
+      <th>Nome assistente</th>
+      <th>Telefone assistente</th>
+      <th>Data devolucao email</th>
+      <th>Motivo devolucao email</th>
+      <th>Recusar emails</th>
+      <th>Fax</th>
+      <th>Recusar fax</th>
+      <th>Telefone residencial</th>
+      <th>Telefone comercial</th>
+      <th>Celular</th>
+      <th>Outro telefone</th>
+      <th>Recusar telefonemas</th>
+      <th>Bairro corre</th>
+      <th>Rua corre</th>
+      <th>Numero corre</th>
+      <th>Complemento corre</th>
+      <th>Cep corre</th>
+      <th>Bairro corpo</th>
+      <th>Logradouro</th>
+      <th>Rua corpo</th>
+      <th>Numero corpo</th>
+      <th>Complemento corpo</th>
+      <th>Cep corpo</th>
+      <th>Esporte preferido</th>
+      <th>Hobby</th>
+      <th>Excluido</th>
+      <th>Origem lead</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @contatos.each do |contato| %>
       <tr>
-        <th>Contum</th>
-        <th>Contato</th>
-        <th>Saudacao</th>
-        <th>Sexo</th>
-        <th>Titulo</th>
-        <th>Nome</th>
-        <th>Sobrenome</th>
-        <th>Data nascimento</th>
-        <th>Empresa</th>
-        <th>Departamento</th>
-        <th>Cpf</th>
-        <th>Descricao</th>
-        <th>Email pessoal</th>
-        <th>Email corporativo</th>
-        <th>Nome assistente</th>
-        <th>Telefone assistente</th>
-        <th>Data devolucao email</th>
-        <th>Motivo devolucao email</th>
-        <th>Recusar emails</th>
-        <th>Fax</th>
-        <th>Recusar fax</th>
-        <th>Telefone residencial</th>
-        <th>Telefone comercial</th>
-        <th>Celular</th>
-        <th>Outro telefone</th>
-        <th>Recusar telefonemas</th>
-        <th>Bairro corre</th>
-        <th>Rua corre</th>
-        <th>Numero corre</th>
-        <th>Complemento corre</th>
-        <th>Cep corre</th>
-        <th>Bairro corpo</th>
-        <th>Logradouro</th>
-        <th>Rua corpo</th>
-        <th>Numero corpo</th>
-        <th>Complemento corpo</th>
-        <th>Cep corpo</th>
-        <th>Esporte preferido</th>
-        <th>Hobby</th>
-        <th>Excluido</th>
-        <th>Origem lead</th>
-        <th colspan="3"></th>
+        <td><%= contato.contum %></td>
+        <td><%= contato.contato %></td>
+        <td><%= contato.saudacao %></td>
+        <td><%= contato.sexo %></td>
+        <td><%= contato.titulo %></td>
+        <td><%= contato.nome %></td>
+        <td><%= contato.sobrenome %></td>
+        <td><%= contato.data_nascimento %></td>
+        <td><%= contato.empresa %></td>
+        <td><%= contato.departamento %></td>
+        <td><%= contato.cpf %></td>
+        <td><%= contato.descricao %></td>
+        <td><%= contato.email_pessoal %></td>
+        <td><%= contato.email_corporativo %></td>
+        <td><%= contato.nome_assistente %></td>
+        <td><%= contato.telefone_assistente %></td>
+        <td><%= contato.data_devolucao_email %></td>
+        <td><%= contato.motivo_devolucao_email %></td>
+        <td><%= contato.recusar_emails %></td>
+        <td><%= contato.fax %></td>
+        <td><%= contato.recusar_fax %></td>
+        <td><%= contato.telefone_residencial %></td>
+        <td><%= contato.telefone_comercial %></td>
+        <td><%= contato.celular %></td>
+        <td><%= contato.outro_telefone %></td>
+        <td><%= contato.recusar_telefonemas %></td>
+        <td><%= contato.bairro_corre %></td>
+        <td><%= contato.rua_corre %></td>
+        <td><%= contato.numero_corre %></td>
+        <td><%= contato.complemento_corre %></td>
+        <td><%= contato.cep_corre %></td>
+        <td><%= contato.bairro_corpo %></td>
+        <td><%= contato.logradouro %></td>
+        <td><%= contato.rua_corpo %></td>
+        <td><%= contato.numero_corpo %></td>
+        <td><%= contato.complemento_corpo %></td>
+        <td><%= contato.cep_corpo %></td>
+        <td><%= contato.esporte_preferido %></td>
+        <td><%= contato.hobby %></td>
+        <td><%= contato.excluido %></td>
+        <td><%= contato.origem_lead %></td>
+
+        <td><%= link_to 'Show', contato, :class => 'btn btn-default btn-sm' %></td>
+        <td><%= link_to 'Edit', edit_contato_path(contato), :class => 'btn btn-default btn-sm' %></td>
+        <td><%= link_to 'Destroy', contato, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-default btn-sm' %></td>
       </tr>
-    </thead>
-
-    <tbody>
-      
-        <tr>
-          <td><%= contato.contum %></td>
-          <td><%= contato.contato %></td>
-          <td><%= contato.saudacao %></td>
-          <td><%= contato.sexo %></td>
-          <td><%= contato.titulo %></td>
-          <td><%= contato.nome %></td>
-          <td><%= contato.sobrenome %></td>
-          <td><%= contato.data_nascimento %></td>
-          <td><%= contato.empresa %></td>
-          <td><%= contato.departamento %></td>
-          <td><%= contato.cpf %></td>
-          <td><%= contato.descricao %></td>
-          <td><%= contato.email_pessoal %></td>
-          <td><%= contato.email_corporativo %></td>
-          <td><%= contato.nome_assistente %></td>
-          <td><%= contato.telefone_assistente %></td>
-          <td><%= contato.data_devolucao_email %></td>
-          <td><%= contato.motivo_devolucao_email %></td>
-          <td><%= contato.recusar_emails %></td>
-          <td><%= contato.fax %></td>
-          <td><%= contato.recusar_fax %></td>
-          <td><%= contato.telefone_residencial %></td>
-          <td><%= contato.telefone_comercial %></td>
-          <td><%= contato.celular %></td>
-          <td><%= contato.outro_telefone %></td>
-          <td><%= contato.recusar_telefonemas %></td>
-          <td><%= contato.bairro_corre %></td>
-          <td><%= contato.rua_corre %></td>
-          <td><%= contato.numero_corre %></td>
-          <td><%= contato.complemento_corre %></td>
-          <td><%= contato.cep_corre %></td>
-          <td><%= contato.bairro_corpo %></td>
-          <td><%= contato.logradouro %></td>
-          <td><%= contato.rua_corpo %></td>
-          <td><%= contato.numero_corpo %></td>
-          <td><%= contato.complemento_corpo %></td>
-          <td><%= contato.cep_corpo %></td>
-          <td><%= contato.esporte_preferido %></td>
-          <td><%= contato.hobby %></td>
-          <td><%= contato.excluido %></td>
-          <td><%= contato.origem_lead %></td>
-
-          <td><%= link_to 'Show', contato, :class => 'btn btn-default btn-sm' %></td>
-          <td><%= link_to 'Edit', edit_contato_path(contato), :class => 'btn btn-default btn-sm' %></td>
-          <td><%= link_to 'Destroy', contato, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-default btn-sm' %></td>
-        </tr>
+    <% end %>  
     </tbody>
   </table>
-<% end %>
