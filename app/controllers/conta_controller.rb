@@ -4,7 +4,7 @@ class ContaController < ApplicationController
   respond_to :html
 
   def index
-    @conta = Contum.where(:proprietario_user_id => current_user.id)
+    @conta = Contum.by_user_id(current_user.id)
     respond_with(@conta)
   end
 

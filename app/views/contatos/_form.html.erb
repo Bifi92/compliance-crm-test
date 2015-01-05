@@ -2,66 +2,68 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
+    <div class="input-group input-group-sm">
 
-    <br><h4><strong> Informações do contato <strong></h4>
+      <br><h4><strong> Informações do contato <strong></h4>
 
-    <br>
-      <strong>
-        <%= "Proprietário: #{User.find_by_id(@contato.proprietario_user_id.nil? ? current_user.id : @contato.proprietario_user_id).email}" %>
-      </strong>
       <br>
-    </br>
+        <strong>
+          <%= "Proprietário: #{User.find_by_id(@contato.proprietario_user_id.nil? ? current_user : @contato.proprietario_user_id).email}" %>
+        </strong>
+        <br>
+      </br>
 
-    <%= f.association :contum, label: "Nome da conta", collection: Contum.where(:proprietario_user_id => current_user.id), label_method: :nome%>    
-    <%= f.association :contato, label: "Reporta-se a" %>    
-    <%= f.input :saudacao, label: "Saudação", collection: @contato.tipos_saudacao, prompt: "Escolha a saudação" %>    
-    <%= f.input :sexo, collection: @contato.tipos_sexo, prompt: "Escolha o sexo" %>
-    <%= f.input :titulo %>
-    <%= f.input :nome %>
-    <%= f.input :sobrenome %>   
-    <%= f.input :data_nascimento, as: :date, html5: true %>
-    <%= f.input :empresa %>    
-    <%= f.input :departamento, collection: @contato.tipos_departamento, prompt: "Escolha o departamento" %>    
-    <%= f.input :cpf, label: "CPF" %>
-    <%= f.input :descricao, label: "Descrição" %>
-    <%= f.input :email_pessoal %>
-    <%= f.input :email_corporativo %>
-    <%= f.input :nome_assistente, label: "Nome do assistente" %>
-    <%= f.input :telefone_assistente, label: "Telefone do assistente" %>    
-    <%= f.input :data_devolucao_email, as: :date, html5: true %> 
-    <%= f.input :motivo_devolucao_email, label: "Motivo de devolução do e-mail" %>
-    <%= f.input :recusar_emails %>
-    <%= f.input :fax %>
-    <%= f.input :recusar_fax %>
-    <%= f.input :telefone_residencial %>
-    <%= f.input :telefone_comercial %>
-    <%= f.input :celular %>
-    <%= f.input :outro_telefone %>
-    <%= f.input :recusar_telefonemas %>
-    <%= f.association :countrycorre_country, label: "País de correspondência", label_method: :nome, prompt: "Escolha o pais"%>
-    <%= f.association :estadocorre_estado, label: "Estado de correspondência", label_method: :nome, collection: [], prompt: "Escolha o estado" %>
-    <%= f.association :cidadecorre_cidade, label: "Cidade de correspondência", label_method: :nome, collection: [], prompt: "Escolha a cidade" %>    
-    <%= f.input :bairro_corre, label: "Bairro de correspondência" %>
-    <%= f.input :rua_corre, label: "Rua de correspondência" %>
-    <%= f.input :numero_corre, label: "Número de correspondência" %>
-    <%= f.input :complemento_corre, label: "Complemento de correspondência" %>
-    <%= f.input :cep_corre, label: "CEP de correspondência" %>
-    <%= f.association :countrycorpo_country, label: "País corporativo", label_method: :nome, prompt: "Escolha o pais"%>
-    <%= f.association :estadocorpo_estado, label: "Estado corporativo", label_method: :nome, collection: [], prompt: "Escolha o estado" %>
-    <%= f.association :cidadecorpo_cidade, label: "Cidade corporativa", label_method: :nome, collection: [], prompt: "Escolha a cidade" %>    
-    <%= f.input :bairro_corpo, label: "Bairro corporativo" %>
-    <%= f.input :logradouro, label: "Logradouro corporativo", collection: @contato.tipos_logradouro, prompt: "Escolha o logradouro" %>
-    <%= f.input :rua_corpo, label: "Rua corporativa" %>
-    <%= f.input :numero_corpo, label: "Número corporativo" %>
-    <%= f.input :complemento_corpo, label: "Complemento corporativo" %>
-    <%= f.input :cep_corpo, label: "CEP corporativo" %>
-    <%= f.input :esporte_preferido %>
-    <%= f.input :hobby %>
-    <%= f.input :origem_lead, label: "Origem do lead", collection: @contato.tipos_origem, prompt: "Escolha a origem" %>
+      <%= f.association :contum, label: "Nome da conta", collection: Contum.where(:proprietario_user_id => current_user.id), label_method: :nome%>    
+      <%= f.association :contato, label: "Reporta-se a" %>    
+      <%= f.input :saudacao, label: "Saudação", collection: @contato.tipos_saudacao, prompt: "Escolha a saudação" %>    
+      <%= f.input :sexo, collection: @contato.tipos_sexo, prompt: "Escolha o sexo" %>
+      <%= f.input :titulo %>
+      <%= f.input :nome %>
+      <%= f.input :sobrenome %>   
+      <%= f.input :data_nascimento, as: :date, html5: true %>
+      <%= f.input :empresa %>    
+      <%= f.input :departamento, collection: @contato.tipos_departamento, prompt: "Escolha o departamento" %>    
+      <%= f.input :cpf, label: "CPF" %>
+      <%= f.input :descricao, label: "Descrição" %>
+      <%= f.input :email_pessoal %>
+      <%= f.input :email_corporativo %>
+      <%= f.input :nome_assistente, label: "Nome do assistente" %>
+      <%= f.input :telefone_assistente, label: "Telefone do assistente" %>    
+      <%= f.input :data_devolucao_email, as: :date, html5: true %> 
+      <%= f.input :motivo_devolucao_email, label: "Motivo de devolução do e-mail" %>
+      <%= f.input :recusar_emails %>
+      <%= f.input :fax %>
+      <%= f.input :recusar_fax %>
+      <%= f.input :telefone_residencial %>
+      <%= f.input :telefone_comercial %>
+      <%= f.input :celular %>
+      <%= f.input :outro_telefone %>
+      <%= f.input :recusar_telefonemas %>
+      <%= f.association :countrycorre_country, label: "País de correspondência", label_method: :nome, prompt: "Escolha o pais"%>
+      <%= f.association :estadocorre_estado, label: "Estado de correspondência", label_method: :nome, collection: [], prompt: "Escolha o estado" %>
+      <%= f.association :cidadecorre_cidade, label: "Cidade de correspondência", label_method: :nome, collection: [], prompt: "Escolha a cidade" %>    
+      <%= f.input :bairro_corre, label: "Bairro de correspondência" %>
+      <%= f.input :rua_corre, label: "Rua de correspondência" %>
+      <%= f.input :numero_corre, label: "Número de correspondência" %>
+      <%= f.input :complemento_corre, label: "Complemento de correspondência" %>
+      <%= f.input :cep_corre, label: "CEP de correspondência" %>
+      <%= f.association :countrycorpo_country, label: "País corporativo", label_method: :nome, prompt: "Escolha o pais"%>
+      <%= f.association :estadocorpo_estado, label: "Estado corporativo", label_method: :nome, collection: [], prompt: "Escolha o estado" %>
+      <%= f.association :cidadecorpo_cidade, label: "Cidade corporativa", label_method: :nome, collection: [], prompt: "Escolha a cidade" %>    
+      <%= f.input :bairro_corpo, label: "Bairro corporativo" %>
+      <%= f.input :logradouro, label: "Logradouro corporativo", collection: @contato.tipos_logradouro, prompt: "Escolha o logradouro" %>
+      <%= f.input :rua_corpo, label: "Rua corporativa" %>
+      <%= f.input :numero_corpo, label: "Número corporativo" %>
+      <%= f.input :complemento_corpo, label: "Complemento corporativo" %>
+      <%= f.input :cep_corpo, label: "CEP corporativo" %>
+      <%= f.input :esporte_preferido %>
+      <%= f.input :hobby %>
+      <%= f.input :origem_lead, label: "Origem do lead", collection: @contato.tipos_origem, prompt: "Escolha a origem" %>
+    </div>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, :class => 'btn-sm' %>
   </div>
 <% end %>
 

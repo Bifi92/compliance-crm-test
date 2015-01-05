@@ -4,7 +4,7 @@ class LeadsController < ApplicationController
   respond_to :html
 
   def index
-    @leads = Lead.where(:proprietario_user_id => current_user.id)
+    @leads = Lead.by_user_id(current_user.id)
     respond_with(@leads)
   end
 
