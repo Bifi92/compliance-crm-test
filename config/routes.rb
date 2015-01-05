@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   devise_scope :user do
   	root to: 'devise/sessions#new'
 
-  	match 'start_page' => 'visitors#index', via: 'get'
+  	match 'start_page' => 'home#index', via: 'get'
 
  	  get "sign_in", to: "devise/sessions#new"
   end
