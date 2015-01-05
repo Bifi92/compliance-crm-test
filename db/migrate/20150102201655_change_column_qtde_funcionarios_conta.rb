@@ -1,5 +1,12 @@
 class ChangeColumnQtdeFuncionariosConta < ActiveRecord::Migration
-  def change
-  	change_column :conta, :qtde_funcionarios, :integer, using: :string
+  def self.up
+    change_table :tablename do |t|
+      t.change :conta, :qtde_funcionarios, :string
+    end
+  end
+  def self.down
+    change_table :tablename do |t|
+      t.change :conta, :qtde_funcionarios, :integer
+    end
   end
 end
