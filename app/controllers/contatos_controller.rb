@@ -4,7 +4,7 @@ class ContatosController < ApplicationController
   respond_to :html
 
   def index
-    @contatos = Contato.all
+    @contatos = Contato.by_user_id(current_user.id)
     respond_with(@contatos)
   end
 
