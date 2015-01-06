@@ -2,16 +2,14 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
+    <div class="input-group input-group-sm">
 
-    <br><h4><strong> Informações do lead <strong></h4>
-
-    <br>
-      <strong>
-        <%= "Proprietário: #{User.find_by_id(@lead.proprietario_user_id.nil? ? current_user.id : @lead.proprietario_user_id
-  ).email}" %>
-      </strong>
       <br>
-    </br>
+        <h4>
+          <strong> Informações do lead <strong>
+        </h4>
+        <br>
+      </br>
 
     <%= f.input :saudacao, collection: @lead.tipos_saudacao, prompt: "Escolha a saudação" %>
     <%= f.input :nome, hint: "teste" %>
@@ -54,8 +52,55 @@
 
   </div>
 
+        <strong>
+          <%= "Proprietário: #{User.find_by_id(@lead.proprietario_user_id.nil? ? current_user : @lead.proprietario_user_id).email}" %>
+        </strong>
+        <br>
+        </br>
+
+      <%= f.input :saudacao, collection: @lead.tipos_saudacao, prompt: "Escolha a saudação" %>
+      <%= f.input :nome %>
+      <%= f.input :sobrenome %>
+      <%= f.input :empresa %>
+      <%= f.input :titulo %>
+      <%= f.input :status, collection: @lead.tipos_status, prompt: "Escolha o status" %>
+      <%= f.input :fax %>
+      <%= f.input :celular %>
+      <%= f.input :telefone %>
+      <%= f.input :recusar_telefonemas, collection: @lead.tipos_sim_nao, prompt: "Recusar telefonemas?" %>
+      <%= f.input :email %>
+      <%= f.input :recusar_emails, collection: @lead.tipos_sim_nao, prompt: "Recusar e-mails?" %>
+      <%= f.input :classificacao, collection: @lead.tipos_classificacao, prompt: "Escolha a classificação" %>
+
+      </br></br><h4><strong> Informações de endereço <strong></h4></br>
+
+      <%= f.association :country, label: "País", label_method: :nome, prompt: "Escolha o pais"%>
+      <%= f.association :estado, label_method: :nome, collection: [], prompt: "Escolha o estado" %>
+      <%= f.association :cidade, label_method: :nome, collection: [], prompt: "Escolha a cidade" %>
+      <%= f.input :rua %>
+      <%= f.input :cep %>
+      <%= f.input :site %>
+
+      </br></br><h4><strong> Informações adicionais <strong></h4></br>
+
+      <%= f.input :erp, collection: @lead.tipos_erp, prompt: "Escolha o ERP" %>
+      <%= f.input :solucao_fiscal, collection: @lead.tipos_solucao_fiscal, prompt: "Escolha a solução fiscal" %>
+      <%= f.input :origem, collection: @lead.tipos_origem, prompt: "Escolha a origem" %>
+      <%= f.input :qtde_funcionarios %>
+      <%= f.input :qtde_cnpj %>
+      <%= f.input :setor, collection: @lead.tipos_setor, prompt: "Escolha o setor" %>
+      <%= f.input :receita_anual, as: :decimal %>
+      <%= f.input :tipo_interesse %>
+      <%= f.input :produtos_interesse %>
+
+      </br></br><h4><strong> Informações de descrição <strong></h4></br>
+
+      <%= f.input :descricao %>
+    </div> <!-- input-group input-group-sm -->
+  </div> <!-- form-inputs -->
+
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, :class => 'btn-sm' %>
   </div>
 <% end %>
 

@@ -1,209 +1,23 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Contum:</strong>
-  <%= @contato.contum %>
-</p>
-
-<p>
-  <strong>Contato:</strong>
-  <%= @contato.contato %>
-</p>
-
-<p>
-  <strong>Saudacao:</strong>
-  <%= @contato.saudacao %>
-</p>
-
-<p>
-  <strong>Sexo:</strong>
-  <%= @contato.sexo %>
-</p>
-
-<p>
-  <strong>Titulo:</strong>
-  <%= @contato.titulo %>
-</p>
-
-<p>
-  <strong>Nome:</strong>
-  <%= @contato.nome %>
-</p>
-
-<p>
-  <strong>Sobrenome:</strong>
-  <%= @contato.sobrenome %>
-</p>
-
-<p>
-  <strong>Data nascimento:</strong>
-  <%= @contato.data_nascimento %>
-</p>
-
-<p>
-  <strong>Empresa:</strong>
-  <%= @contato.empresa %>
-</p>
-
-<p>
-  <strong>Departamento:</strong>
-  <%= @contato.departamento %>
-</p>
-
-<p>
-  <strong>Cpf:</strong>
-  <%= @contato.cpf %>
-</p>
-
-<p>
-  <strong>Descricao:</strong>
-  <%= @contato.descricao %>
-</p>
-
-<p>
-  <strong>Email pessoal:</strong>
-  <%= @contato.email_pessoal %>
-</p>
-
-<p>
-  <strong>Email corporativo:</strong>
-  <%= @contato.email_corporativo %>
-</p>
-
-<p>
-  <strong>Nome assistente:</strong>
-  <%= @contato.nome_assistente %>
-</p>
-
-<p>
-  <strong>Telefone assistente:</strong>
-  <%= @contato.telefone_assistente %>
-</p>
-
-<p>
-  <strong>Data devolucao email:</strong>
-  <%= @contato.data_devolucao_email %>
-</p>
-
-<p>
-  <strong>Motivo devolucao email:</strong>
-  <%= @contato.motivo_devolucao_email %>
-</p>
-
-<p>
-  <strong>Recusar emails:</strong>
-  <%= @contato.recusar_emails %>
-</p>
-
-<p>
-  <strong>Fax:</strong>
-  <%= @contato.fax %>
-</p>
-
-<p>
-  <strong>Recusar fax:</strong>
-  <%= @contato.recusar_fax %>
-</p>
-
-<p>
-  <strong>Telefone residencial:</strong>
-  <%= @contato.telefone_residencial %>
-</p>
-
-<p>
-  <strong>Telefone comercial:</strong>
-  <%= @contato.telefone_comercial %>
-</p>
-
-<p>
-  <strong>Celular:</strong>
-  <%= @contato.celular %>
-</p>
-
-<p>
-  <strong>Outro telefone:</strong>
-  <%= @contato.outro_telefone %>
-</p>
-
-<p>
-  <strong>Recusar telefonemas:</strong>
-  <%= @contato.recusar_telefonemas %>
-</p>
-
-<p>
-  <strong>Bairro corre:</strong>
-  <%= @contato.bairro_corre %>
-</p>
-
-<p>
-  <strong>Rua corre:</strong>
-  <%= @contato.rua_corre %>
-</p>
-
-<p>
-  <strong>Numero corre:</strong>
-  <%= @contato.numero_corre %>
-</p>
-
-<p>
-  <strong>Complemento corre:</strong>
-  <%= @contato.complemento_corre %>
-</p>
-
-<p>
-  <strong>Cep corre:</strong>
-  <%= @contato.cep_corre %>
-</p>
-
-<p>
-  <strong>Bairro corpo:</strong>
-  <%= @contato.bairro_corpo %>
-</p>
-
-<p>
-  <strong>Logradouro:</strong>
-  <%= @contato.logradouro %>
-</p>
-
-<p>
-  <strong>Rua corpo:</strong>
-  <%= @contato.rua_corpo %>
-</p>
-
-<p>
-  <strong>Numero corpo:</strong>
-  <%= @contato.numero_corpo %>
-</p>
-
-<p>
-  <strong>Complemento corpo:</strong>
-  <%= @contato.complemento_corpo %>
-</p>
-
-<p>
-  <strong>Cep corpo:</strong>
-  <%= @contato.cep_corpo %>
-</p>
-
-<p>
-  <strong>Esporte preferido:</strong>
-  <%= @contato.esporte_preferido %>
-</p>
-
-<p>
-  <strong>Hobby:</strong>
-  <%= @contato.hobby %>
-</p>
-
-<p>
-  <strong>Excluido:</strong>
-  <%= @contato.excluido %>
-</p>
-
-<p>
-  <strong>Origem lead:</strong>
-  <%= @contato.origem_lead %>
-</p>
 
 <%= link_to 'Edit', edit_contato_path(@contato) %> |
 <%= link_to 'Back', contatos_path %>
+
+<div class="col-md-10">
+  <p id="notice"><%= notice %></p>
+
+  <div style="margin-bottom: 10px; margin-top: 10px">
+    <%= link_to 'Editar', edit_contato_path(@contato), :class => 'btn btn-default btn-sm' %>
+    <%= link_to 'Voltar', contatos_path, :class => 'btn btn-default btn-sm' %>
+  </div>
+
+  <div class="panel panel-primary">
+    <div class="panel-heading text-center">
+        <h4>Contato</h4>
+    </div>
+    <div class="panel-body">
+      <%= render 'show' %>
+    </div>
+  </div>
+</div>

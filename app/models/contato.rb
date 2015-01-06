@@ -31,6 +31,8 @@ class Contato < ActiveRecord::Base
   validates_presence_of :contum, :sobrenome
   validates :email_pessoal, :email_corporativo, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i}, :allow_blank => true  
 
+  scope :by_user_id, -> (proprietario_user_id) { where(:proprietario_user_id => proprietario_user_id) }
+
   def to_s
     "#{nome} #{sobrenome}".strip
   end 

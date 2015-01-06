@@ -173,3 +173,22 @@
 <%= link_to 'Editar', edit_lead_path(@lead), :class => 'btn btn-default' %>
 <%= link_to 'Converter', convert_lead_path(@lead), :class => 'btn btn-default' %>
 <%= link_to 'Voltar', leads_path, :class => 'btn btn-default' %>
+
+<div class="col-md-10">
+  <p id="notice"><%= notice %></p>
+
+  <div style="margin-bottom: 10px; margin-top: 10px">
+    <%= link_to 'Editar', edit_lead_path(@lead), :class => 'btn btn-default btn-sm' %>
+    <%= link_to 'Converter', convert_lead_path, :class => 'btn btn-default btn-sm' %>
+    <%= link_to 'Voltar', leads_path, :class => 'btn btn-default btn-sm' %>
+  </div>
+
+  <div class="panel panel-primary">
+    <div class="panel-heading text-center">
+        <h4>Lead</h4>
+    </div>
+    <div class="panel-body">
+      <%= render 'show' %>
+    </div>
+  </div>
+</div>
