@@ -1,17 +1,15 @@
-<div class="col-md-12">
-  <p id="notice"><%= notice %></p>
+<p id="notice"><%= notice %></p>
 
-  <div style="margin-bottom: 10px; margin-top: 10px">
-    <%= link_to 'Editar', edit_contum_path(@contum), :class => 'btn btn-default btn-sm' %>
-    <%= link_to 'Voltar', conta_path, :class => 'btn btn-default btn-sm' %>
+<div style="margin-bottom: 10px; margin-top: 10px">
+  <%= link_to 'Editar', edit_contum_path(@contum), :class => 'btn btn-default btn-sm' %>
+  <%= link_to 'Voltar', conta_path, :class => 'btn btn-default btn-sm' %>
+</div>
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-center">
+      <h4>Conta</h4>
   </div>
-
-  <div class="panel panel-primary">
-    <div class="panel-heading text-center">
-        <h4>Conta</h4>
-    </div>
-    <div class="panel-body">
-      <%= render 'show' %>
-    </div>
+  <div class="panel-body">
+    <%= render 'show' %>
   </div>
 </div>

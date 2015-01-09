@@ -14,8 +14,10 @@
     </header>
     <main role="main">
       <div class="container master-container">
-        <%= render 'layouts/messages' %>
-        <%= yield %>
+        <div class="col-md-12">
+          <%= render 'layouts/messages' %>
+          <%= yield %>
+        </div>
       </div>
     </main> 
     <div class="panel-footer">

@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
   	match 'start_page' => 'home#index', via: 'get'
 
- 	  get "sign_in", to: "devise/sessions#new"
+ 	  get 'sign_in', to: "devise/sessions#new"
   end
   
   match "/cidades_por_estado" => "cidades#cidades_por_estado", via: 'get'
