@@ -23,6 +23,7 @@ Rails.application.routes.draw do
 
   match "/cidades_nil" => "cidades#cidades_nil", via: 'get'
   
-  match "convert_lead" => "leads#convert", via: 'get' 
+  match "/leads/:id/convert" => "leads#convert", via: 'get', as: :convert_lead
+  match "/leads/:id/convert" => "leads#execute_conversion", via: 'post', as: :execute_conversion
 
 end
