@@ -1,4 +1,5 @@
 class ContaController < ApplicationController
+  before_action :require_authentication
   before_action :set_contum, only: [:show, :edit, :update, :destroy]
 
   respond_to :html

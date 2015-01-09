@@ -10,4 +10,11 @@ class ApplicationController < ActionController::Base
   def after_sign_out_path_for(resource_or_scope)
     root_path
   end
+
+  def require_authentication
+		unless user_signed_in?
+			redirect_to sign_in_path,
+			alert: 'You need logged in'
+		end
+	end
 end
