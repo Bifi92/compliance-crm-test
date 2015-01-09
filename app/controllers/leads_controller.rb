@@ -1,4 +1,5 @@
 class LeadsController < ApplicationController
+  before_action :require_authentication
   before_action :set_lead, only: [:show, :edit, :update, :destroy]
 
   respond_to :html

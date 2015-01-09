@@ -1,4 +1,5 @@
 class CidadesController < ApplicationController
+  before_action :require_authentication
 
   def cidades_por_estado
     

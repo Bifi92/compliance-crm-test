@@ -1,4 +1,5 @@
 class EstadosController < ApplicationController
+	before_action :require_authentication
 
   def estados_por_pais
     
