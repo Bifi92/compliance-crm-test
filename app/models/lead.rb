@@ -4,6 +4,10 @@ class Lead < ActiveRecord::Base
   belongs_to :estado
   belongs_to :cidade
 
+  belongs_to :proprietario_user,
+             :class_name => "User",
+             :foreign_key => "proprietario_user_id"
+
   validates_presence_of :empresa, :sobrenome, :status
   validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i}, :allow_blank => true
 
@@ -11,6 +15,14 @@ class Lead < ActiveRecord::Base
 
   def to_s
     "#{nome} #{sobrenome}".strip
+  end 
+
+  def proprietario_user_name
+    User.find(proprietario_user_id).email
+  end 
+
+  def execute_conversion (proprietario_user_id, conta_id, enviar_email)
+    
   end  
 
   def tipos_sim_nao

@@ -1,2 +1,24 @@
 <h1>Converter Lead</h1>
 
+<%= form_tag method: "execute_conversion" do %>
+  
+  <p>
+    <%= label_tag "Proprietário do registro" %>
+    <%= select_tag :proprietario_user_id, options_from_collection_for_select(User.all, "id", "email"), prompt: "Alterar proprietário" %>
+    <i>Caso não alterar, será mantido o proprietário atual <i> <%= "(#{@lead.proprietario_user_name})" %>
+  </p>
+
+  <p>
+    <%= label_tag "Enviar e-mail ao proprietário" %> 
+    <%= check_box_tag :enviar %>
+  </p>
+
+  <p>
+    <%= label_tag "Nome da conta" %>
+    <%= select_tag :conta_id, options_from_collection_for_select(Contum.where(proprietario_user_id: current_user.id), "id", "nome"), prompt: "Atribuir uma conta existente" %>
+    <i>Caso não atribuir, será criado uma nova conta com base na empresa do lead <i> <%= "(#{@lead.empresa})" %>
+  </p>
+
+<%= submit_tag 'Converter' %>
+<% end %>
+
