@@ -5,7 +5,7 @@ class LeadsController < ApplicationController
   respond_to :html
 
   def index
-    @leads = Lead.by_user_id(current_user.id)
+    @leads = Lead.where({proprietario_user_id: current_user.id, convertido: false})
     respond_with(@leads)
   end
 
@@ -50,10 +50,10 @@ class LeadsController < ApplicationController
     set_lead    
     enviar_email = params[:enviar]
     enviar_email = 0 if enviar_email.nil?    
-    conta_id = params[:conta_id]    
+    conta_id = params[:conta_id]
     proprietario_user_id = params[:proprietario_user_id]
-    
-    @lead.execute_conversion(proprietario_user_id, conta_id, enviar_email)
+
+    conta_id = @lead.execute_conversion(current_user.id, proprietario_user_id, conta_id, enviar_email)
 
     redirect_to contum_path(conta_id)
     
