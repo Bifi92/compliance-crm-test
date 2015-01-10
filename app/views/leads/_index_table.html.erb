@@ -1,40 +1,10 @@
 <table class="table">
   <thead>
     <tr>
-      <th>Saudacao</th>
-      <th>Empresa</th>
       <th>Nome</th>
-      <th>Sobrenome</th>
-      <th>Titulo</th>
-      <th>Status</th>
-      <th>Descricao</th>
-      <th>Erp</th>
-      <th>Solucao fiscal</th>
-      <th>Country</th>
-      <th>Estado</th>
-      <th>Cidade</th>
-      <th>Rua</th>
-      <th>Cep</th>
-      <th>Origem</th>
-      <th>Reconhecido</th>
-      <th>Classificacao</th>
-      <th>Motivo desqualificacao</th>
-      <th>Orcamento aprovado</th>
-      <th>Convertido</th>
-      <th>Data da conversao</th>
-      <th>Fax</th>
-      <th>Celular</th>
+      <th>Empresa</th>
       <th>Telefone</th>
-      <th>Recusar telefonemas</th>
-      <th>Email</th>
-      <th>Recusar emails</th>
-      <th>Site</th>
-      <th>Qtde funcionarios</th>
-      <th>Qtde cnpj</th>
-      <th>Setor</th>
-      <th>Receita anual</th>
-      <th>Tipo interesse</th>
-      <th>Produtos interesse</th>
+      <th>Celular</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -42,41 +12,10 @@
   <tbody>
     <% @leads.each do |lead| %>
       <tr>
-        <td><%= lead.saudacao %></td>
+        <td><%= lead.to_s %></td>
         <td><%= lead.empresa %></td>
-        <td><%= lead.nome %></td>
-        <td><%= lead.sobrenome %></td>
-        <td><%= lead.titulo %></td>
-        <td><%= lead.status %></td>
-        <td><%= lead.descricao %></td>
-        <td><%= lead.erp %></td>
-        <td><%= lead.solucao_fiscal %></td>
-        <td><%= lead.country %></td>
-        <td><%= lead.estado %></td>
-        <td><%= lead.cidade %></td>
-        <td><%= lead.rua %></td>
-        <td><%= lead.cep %></td>
-        <td><%= lead.origem %></td>
-        <td><%= lead.reconhecido %></td>
-        <td><%= lead.classificacao %></td>
-        <td><%= lead.motivo_desqualificacao %></td>
-        <td><%= lead.orcamento_aprovado %></td>
-        <td><%= lead.convertido %></td>
-        <td><%= lead.data_da_conversao %></td>
-        <td><%= lead.fax %></td>
-        <td><%= lead.celular %></td>
         <td><%= lead.telefone %></td>
-        <td><%= lead.recusar_telefonemas %></td>
-        <td><%= lead.email %></td>
-        <td><%= lead.recusar_emails %></td>
-        <td><%= lead.site %></td>
-        <td><%= lead.qtde_funcionarios %></td>
-        <td><%= lead.qtde_cnpj %></td>
-        <td><%= lead.setor %></td>
-        <td><%= lead.receita_anual %></td>
-        <td><%= lead.tipo_interesse %></td>
-        <td><%= lead.produtos_interesse %></td>
-        
+        <td><%= lead.celular %></td>
         <td><%= link_to 'Show', lead, :class => 'btn btn-default btn-sm' %></td>
         <td><%= link_to 'Edit', edit_lead_path(lead), :class => 'btn btn-default btn-sm' %></td>
         <td><%= link_to 'Destroy', lead, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-default btn-sm'  %></td>

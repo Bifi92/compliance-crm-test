@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150104032719) do
+ActiveRecord::Schema.define(version: 20150109010341) do
 
   create_table "cidades", force: :cascade do |t|
     t.integer  "estado_id"
@@ -158,7 +158,7 @@ ActiveRecord::Schema.define(version: 20150104032719) do
     t.string   "classificacao"
     t.text     "motivo_desqualificacao"
     t.string   "orcamento_aprovado"
-    t.string   "convertido"
+    t.boolean  "convertido",             default: false
     t.date     "data_da_conversao"
     t.string   "fax"
     t.string   "celular"
@@ -173,8 +173,8 @@ ActiveRecord::Schema.define(version: 20150104032719) do
     t.float    "receita_anual"
     t.text     "tipo_interesse"
     t.text     "produtos_interesse"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
     t.integer  "criador_user_id"
     t.integer  "proprietario_user_id"
     t.integer  "ultimoalterar_user_id"

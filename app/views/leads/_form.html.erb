@@ -4,13 +4,19 @@
   <div class="form-inputs">
     <div class="input-group input-group-sm">
 
-      <br><h4><strong> Informações do lead <strong></h4>
+      <br><h4><strong> Informações do lead <strong></h4></br>
 
+      <strong>
+        <%= "Proprietário: #{User.find_by_id(@lead.proprietario_user_id.nil? ? current_user : @lead.proprietario_user_id).email}" %>
+      </strong>
       <br>
+<<<<<<< HEAD
         <strong>
           <%= "Proprietário: #{User.find_by_id(@lead.proprietario_user_id.nil? ? current_user : @lead.proprietario_user_id).email}" %>
         </strong>
         <br>
+=======
+>>>>>>> ad7ce2c5639a43acdb1bebee4db463ba600d362f
       </br>
 
       <%= f.input :saudacao, collection: @lead.tipos_saudacao, prompt: "Escolha a saudação" %>
