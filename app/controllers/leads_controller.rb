@@ -5,7 +5,7 @@ class LeadsController < ApplicationController
   respond_to :html
 
   def index
-    @leads = Lead.where({proprietario_user_id: current_user.id, convertido: false})
+    @leads = Lead.not_converted_by_user_id(current_user.id)
     respond_with(@leads)
   end
 
