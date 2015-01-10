@@ -8,7 +8,7 @@
 
       <br>
         <strong>
-          <%= "Proprietário: #{User.find_by_id(@contato.proprietario_user_id.nil? ? current_user : @contato.proprietario_user_id).email}" %>
+          <%= "Proprietário: #{User.find_by_id(@contato.proprietario_user_id.nil? ? current_user : @contato.proprietario_user_id).name}" %>
         </strong>
         <br>
       </br>

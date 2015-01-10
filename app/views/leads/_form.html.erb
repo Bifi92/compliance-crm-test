@@ -7,7 +7,7 @@
       <br><h4><strong> Informações do lead <strong></h4></br>
 
       <strong>
-        <%= "Proprietário: #{User.find_by_id(@lead.proprietario_user_id.nil? ? current_user : @lead.proprietario_user_id).email}" %>
+        <%= "Proprietário: #{User.find_by_id(@lead.proprietario_user_id.nil? ? current_user.id : @lead.proprietario_user_id).name}" %>
       </strong>
       <br></br>
 
