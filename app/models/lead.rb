@@ -18,11 +18,25 @@ class Lead < ActiveRecord::Base
   end 
 
   def proprietario_user_name
-    User.find(proprietario_user_id).email
-  end 
+    User.find(self.proprietario_user_id).email
+  end
 
-  def execute_conversion (proprietario_user_id, conta_id, enviar_email)
+  def execute_conversion (current_user_id, proprietario_user_id, conta_id, enviar_email)
     
+    if proprietario_user_id.blank?
+      proprietario_user_id = self.proprietario_user_id
+    end
+
+    if conta_id.blank?
+      conta_id = Contum.create!(:nome => self.empresa, :qtde_funcionarios => self.qtde_funcionarios, :tipo_conta => "Prospect", :setor => self.setor, :receita_anual => self.receita_anual, :proprietario_user_id => proprietario_user_id, :criador_user_id => current_user_id, :ultimoalterar_user_id => current_user_id ).id
+    end
+
+    Contato.create!(:contum_id => conta_id, :saudacao => self.saudacao, :titulo => self.titulo, :nome => self.nome, :sobrenome => self.sobrenome, :empresa => self.empresa, :descricao => self.descricao, :email_pessoal => self.email, :recusar_emails => self.recusar_emails, :fax => self.fax, :telefone_residencial => self.telefone, :celular => self.celular, :recusar_telefonemas => self.recusar_telefonemas, :countrycorre_country_id => self.country_id, :estadocorre_estado_id => self.estado_id, :cidadecorre_cidade_id => self.cidade_id, :rua_corre => self.rua, :cep_corre => self.cep, :origem_lead => self.origem, :proprietario_user_id => proprietario_user_id, :criador_user_id => current_user_id, :ultimoalterar_user_id => current_user_id )
+
+    Lead.update(self.id, :proprietario_user_id => proprietario_user_id, :convertido => true)
+
+    return conta_id
+
   end  
 
   def tipos_sim_nao
