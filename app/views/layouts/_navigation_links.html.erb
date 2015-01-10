@@ -1,14 +1,7 @@
-	<%# add navigation links to this file %>
+<%# add navigation links to this file %>
 <li><%= link_to 'Leads', leads_path %></li>
 <li><%= link_to 'Contas', conta_path %></li>
 <li><%= link_to 'Contatos', contatos_path %></li>
-<li><%= link_to 'Sobre', page_path('about') %></li>
-
-<ul class="nav navbar-nav navbar-right"> 
-  <li><%= link_to current_user.email,  edit_user_registration_path %></li>
-  <li><%= link_to '| Sair', destroy_user_session_path, :method=>'delete' %></li>
-</ul>  
-
 <% if current_user.admin? %>
  	<li><%= link_to 'Admin Dashboard', rails_admin_path%></li>
 <% end %>
