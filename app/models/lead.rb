@@ -11,6 +11,7 @@ class Lead < ActiveRecord::Base
   validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i}, :allow_blank => true
 
   scope :by_user_id, -> (proprietario_user_id) { where(:proprietario_user_id => proprietario_user_id) }
+  scope :not_converted_by_user_id, -> (proprietario_user_id) { where(:proprietario_user_id => proprietario_user_id, :convertido => false) }
 
   def to_s
     "#{nome} #{sobrenome}".strip

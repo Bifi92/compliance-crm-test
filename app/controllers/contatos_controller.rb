@@ -5,7 +5,7 @@ class ContatosController < ApplicationController
   respond_to :html
 
   def index
-    @contatos = Contato.by_user_id(current_user.id)
+    @contatos = Contato.by_user_id(current_user.id).page(params[:page])
     respond_with(@contatos)
   end
 

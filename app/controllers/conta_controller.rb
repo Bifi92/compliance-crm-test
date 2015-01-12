@@ -5,7 +5,7 @@ class ContaController < ApplicationController
   respond_to :html
 
   def index
-    @conta = Contum.by_user_id(current_user.id)
+    @conta = Contum.by_user_id(current_user.id).page(params[:page])
     respond_with(@conta)
   end
 
