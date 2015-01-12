@@ -5,8 +5,7 @@ class LeadsController < ApplicationController
   respond_to :html
 
   def index
-    @leads = Lead.not_converted_by_user_id(current_user.id)
-    respond_with(@leads)
+    @leads = Lead.not_converted_by_user_id(current_user.id).page(params[:page])
   end
 
   def show
