@@ -18,7 +18,7 @@ class Lead < ActiveRecord::Base
   end 
 
   def proprietario_user_name
-    User.find(self.proprietario_user_id).email
+    User.find(self.proprietario_user_id).name
   end
 
   def execute_conversion (current_user_id, proprietario_user_id, conta_id, enviar_email)

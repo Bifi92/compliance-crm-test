@@ -16,9 +16,9 @@
         <td><%= lead.empresa %></td>
         <td><%= lead.telefone %></td>
         <td><%= lead.celular %></td>
-        <td><%= link_to 'Show', lead, :class => 'btn btn-default btn-sm' %></td>
-        <td><%= link_to 'Edit', edit_lead_path(lead), :class => 'btn btn-default btn-sm' %></td>
-        <td><%= link_to 'Destroy', lead, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-default btn-sm'  %></td>
+        <td><%= link_to 'Ver', lead, :class => 'btn btn-default btn-sm' %></td>
+        <td><%= link_to 'Editar', edit_lead_path(lead), :class => 'btn btn-default btn-sm' %></td>
+        <td><%= link_to 'Excluir', lead, method: :delete, data: { confirm: 'Tem certeza?' }, :class => 'btn btn-default btn-sm'  %></td>
       </tr>
     <% end %>
   </tbody>
