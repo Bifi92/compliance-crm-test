@@ -1,24 +1,27 @@
-<h1>Converter Lead</h1>
+<div class="panel panel-primary" style="margin-top: 1%">
+  <div class="panel-heading text-center">
+    <h4>Converter Lead</h4>
+  </div>
+  <div class="panel-body">
+    <div class="form-inputs">
+      <div class="input-group input-group-sm">
+        <%= simple_form_for :convert, {url: convert_lead_path} do |f| %>
+          <%= f.input :proprietario_user_id, :collection => User.all, :label_method => :name, :value_method => :id, :selected => @lead.proprietario_user_id, :label => 'Proprietário', :include_blank => false %>
 
-<%= form_tag method: "execute_conversion" do %>
-  
-  <p>
-    <%= label_tag "Proprietário do registro" %>
-    <%= select_tag :proprietario_user_id, options_from_collection_for_select(User.all, "id", "email"), prompt: "Alterar proprietário" %>
-    <i>Caso não alterar, será mantido o proprietário atual <i> <%= "(#{@lead.proprietario_user_name})" %>
-  </p>
+          <%= f.input :eniar, as: :boolean, :label => 'Enviar e-mail ao proprietário?' %>
 
-  <p>
-    <%= label_tag "Enviar e-mail ao proprietário" %> 
-    <%= check_box_tag :enviar %>
-  </p>
+          <%= f.input :conta_id, :collection => Contum.all, prompt: 'Selecionar Conta', :label_method => :nome, :value_method => :id, :label => 'Conta', :include_blank => false %>
+          <p class="help-block">
+            <i>Se nenhuma conta for atribuída, será criado uma nova conta com base na empresa do lead<i> - <%= "#{@lead.empresa}" %>
+          </p>
 
-  <p>
-    <%= label_tag "Nome da conta" %>
-    <%= select_tag :conta_id, options_from_collection_for_select(Contum.where(proprietario_user_id: current_user.id), "id", "nome"), prompt: "Atribuir uma conta existente" %>
-    <i>Caso não atribuir, será criado uma nova conta com base na empresa do lead <i> <%= "(#{@lead.empresa})" %>
-  </p>
-
-<%= submit_tag 'Converter' %>
-<% end %>
+          <div class="form-actions">
+            <%= f.button :submit, 'Converter', :class => 'btn btn-primary btn-sm'%>
+            <%= link_to 'Cancelar', lead_path(@lead.id), :class => 'btn btn-default btn-sm' %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
 

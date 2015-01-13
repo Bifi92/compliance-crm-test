@@ -45,7 +45,6 @@ class LeadsController < ApplicationController
   end  
 
   def execute_conversion
-    
     set_lead    
     enviar_email = params[:enviar]
     enviar_email = 0 if enviar_email.nil?    
@@ -55,7 +54,6 @@ class LeadsController < ApplicationController
     conta_id = @lead.execute_conversion(current_user.id, proprietario_user_id, conta_id, enviar_email)
 
     redirect_to contum_path(conta_id)
-    
   end   
 
   private

@@ -1,169 +1,147 @@
-<p>
-  <strong>Saudacao:</strong>
-  <%= @lead.saudacao %>
-</p>
+<div class="panel panel-info">
+  <div class="panel-heading">
+     <h6 class="panel-title">Estado</h6>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <strong>Status:</strong>
+      <%= @lead.status %>
 
-<p>
-  <strong>Empresa:</strong>
-  <%= @lead.empresa %>
-</p>
+      <strong>Classificacao:</strong>
+      <%= @lead.classificacao %>
+    </div>
+    <div class="row">
+      <strong>Reconhecido:</strong>
+      <%= @lead.reconhecido %>
 
-<p>
-  <strong>Nome:</strong>
-  <%= @lead.nome %>
-</p>
+      <strong>Motivo desqualificacao:</strong>
+      <%= @lead.motivo_desqualificacao %>
 
-<p>
-  <strong>Sobrenome:</strong>
-  <%= @lead.sobrenome %>
-</p>
+      <strong>Convertido:</strong>
+      <%= @lead.convertido %>
 
-<p>
-  <strong>Titulo:</strong>
-  <%= @lead.titulo %>
-</p>
+      <strong>Data da conversao:</strong>
+      <%= @lead.data_da_conversao %>
+    </div>
+  </div>  
+</div>
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h6 class="panel-title">Informações do Lead</h6>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <strong>Empresa:</strong>
+      <%= @lead.empresa %>    
+    </div>
+    <div class="row">
+      <strong>Saudacao:</strong>
+      <%= @lead.saudacao %>
 
-<p>
-  <strong>Status:</strong>
-  <%= @lead.status %>
-</p>
+      <strong>Titulo:</strong>
+      <%= @lead.titulo %>
+    
+      <strong>Nome:</strong>
+      <%= @lead.nome %>
+    
+      <strong>Sobrenome:</strong>
+      <%= @lead.sobrenome %>
+    </div>
+    <div class="row">
+      <strong>Telefone:</strong>
+      <%= @lead.telefone %>
 
-<p>
-  <strong>Descricao:</strong>
-  <%= @lead.descricao %>
-</p>
+      <strong>Celular:</strong>
+      <%= @lead.celular %>
 
-<p>
-  <strong>Erp:</strong>
-  <%= @lead.erp %>
-</p>
+      <strong>Fax:</strong>
+      <%= @lead.fax %>
 
-<p>
-  <strong>Solucao fiscal:</strong>
-  <%= @lead.solucao_fiscal %>
-</p>
+      <strong>Recusar telefonemas:</strong>
+      <%= @lead.recusar_telefonemas %>
+    </div>
+    <div class="row">
+      <strong>Email:</strong>
+      <%= @lead.email %>
 
-<p>
-  <strong>Country:</strong>
-  <%= @lead.country %>
-</p>
+      <strong>Recusar emails:</strong>
+      <%= @lead.recusar_emails %>
+    </div>
+  </div>
+</div>
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h6 class="panel-title">Informações de endereço</h6>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <strong>Rua:</strong>
+      <%= @lead.rua %>
 
-<p>
-  <strong>Estado:</strong>
-  <%= @lead.estado %>
-</p>
+       <strong>Cep:</strong>
+      <%= @lead.cep %>
+    </div>
+    <div class="row">
+      <strong>Cidade:</strong>
+      <%= @lead.cidade %>
 
-<p>
-  <strong>Cidade:</strong>
-  <%= @lead.cidade %>
-</p>
+      <strong>Country:</strong>
+      <%= @lead.country %>
+    </div>
+    <div class="row">
+      <strong>Site:</strong>
+      <%= @lead.site %>
+    </div>
+  </div>
+</div>
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h6 class="panel-title">Informações adicionais</h6>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <strong>Erp:</strong>
+      <%= @lead.erp %>
 
-<p>
-  <strong>Rua:</strong>
-  <%= @lead.rua %>
-</p>
+      <strong>Solucao fiscal:</strong>
+      <%= @lead.solucao_fiscal %>
 
-<p>
-  <strong>Cep:</strong>
-  <%= @lead.cep %>
-</p>
+      <strong>Origem:</strong>
+      <%= @lead.origem %>
+    </div>
+    <div class="row">
+      <strong>Qtde funcionarios:</strong>
+      <%= @lead.qtde_funcionarios %>
 
-<p>
-  <strong>Origem:</strong>
-  <%= @lead.origem %>
-</p>
+      <strong>Qtde cnpj:</strong>
+      <%= @lead.qtde_cnpj %>
 
-<p>
-  <strong>Reconhecido:</strong>
-  <%= @lead.reconhecido %>
-</p>
+      <strong>Receita anual:</strong>
+      <%= @lead.receita_anual %>
 
-<p>
-  <strong>Classificacao:</strong>
-  <%= @lead.classificacao %>
-</p>
+      <strong>Setor:</strong>
+      <%= @lead.setor %>
 
-<p>
-  <strong>Motivo desqualificacao:</strong>
-  <%= @lead.motivo_desqualificacao %>
-</p>
+      <strong>Orcamento aprovado:</strong>
+      <%= @lead.orcamento_aprovado %>
+    </div>
+    <div class="row">
+      <strong>Produtos interesse:</strong>
+      <%= @lead.produtos_interesse %>
 
-<p>
-  <strong>Orcamento aprovado:</strong>
-  <%= @lead.orcamento_aprovado %>
-</p>
-
-<p>
-  <strong>Convertido:</strong>
-  <%= @lead.convertido %>
-</p>
-
-<p>
-  <strong>Data da conversao:</strong>
-  <%= @lead.data_da_conversao %>
-</p>
-
-<p>
-  <strong>Fax:</strong>
-  <%= @lead.fax %>
-</p>
-
-<p>
-  <strong>Celular:</strong>
-  <%= @lead.celular %>
-</p>
-
-<p>
-  <strong>Telefone:</strong>
-  <%= @lead.telefone %>
-</p>
-
-<p>
-  <strong>Recusar telefonemas:</strong>
-  <%= @lead.recusar_telefonemas %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @lead.email %>
-</p>
-
-<p>
-  <strong>Recusar emails:</strong>
-  <%= @lead.recusar_emails %>
-</p>
-
-<p>
-  <strong>Site:</strong>
-  <%= @lead.site %>
-</p>
-
-<p>
-  <strong>Qtde funcionarios:</strong>
-  <%= @lead.qtde_funcionarios %>
-</p>
-
-<p>
-  <strong>Qtde cnpj:</strong>
-  <%= @lead.qtde_cnpj %>
-</p>
-
-<p>
-  <strong>Setor:</strong>
-  <%= @lead.setor %>
-</p>
-
-<p>
-  <strong>Receita anual:</strong>
-  <%= @lead.receita_anual %>
-</p>
-
-<p>
-  <strong>Tipo interesse:</strong>
-  <%= @lead.tipo_interesse %>
-</p>
-
-<p>
-  <strong>Produtos interesse:</strong>
-  <%= @lead.produtos_interesse %>
-</p>
+      <strong>Tipo interesse:</strong>
+      <%= @lead.tipo_interesse %>
+    </div>
+  </div>
+</div>
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h6 class="panel-title">Descrição</h6>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <strong>Descricao:</strong>
+      <%= @lead.descricao %>
+    </div>
+  </div>
+</div>
