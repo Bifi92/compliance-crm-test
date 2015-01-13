@@ -14,10 +14,11 @@
         <td><%= contato.to_s %></td>
         <td><%= contato.contum %></td>
         <td><%= contato.telefone_comercial %></td>
-
-        <td><%= link_to 'Ver', contato, :class => 'btn btn-default btn-sm' %></td>
-        <td><%= link_to 'Editar', edit_contato_path(contato), :class => 'btn btn-default btn-sm' %></td>
-        <td><%= link_to 'Excluir', contato, method: :delete, data: { confirm: 'Tem certeza?' }, :class => 'btn btn-default btn-sm' %></td>
+        <td>
+          <%= link_to 'Ver', contato, :class => 'btn btn-default btn-sm' %>
+          <%= link_to 'Editar', edit_contato_path(contato), :class => 'btn btn-default btn-sm' %>
+          <%= link_to 'Excluir', contato, method: :delete, data: { confirm: 'Tem certeza?' }, :class => 'btn btn-default btn-sm' %>
+        </td>
       </tr>
     <% end %>  
     </tbody>
