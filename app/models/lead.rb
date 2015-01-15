@@ -41,7 +41,7 @@ class Lead < ActiveRecord::Base
 
     Contato.create!(:contum_id => conta_id, :saudacao => self.saudacao, :titulo => self.titulo, :nome => self.nome, :sobrenome => self.sobrenome, :empresa => self.empresa, :descricao => self.descricao, :email_pessoal => self.email, :recusar_emails => self.recusar_emails, :fax => self.fax, :telefone_residencial => self.telefone, :celular => self.celular, :recusar_telefonemas => self.recusar_telefonemas, :countrycorre_country_id => self.country_id, :estadocorre_estado_id => self.estado_id, :cidadecorre_cidade_id => self.cidade_id, :rua_corre => self.rua, :cep_corre => self.cep, :origem_lead => self.origem, :proprietario_user_id => proprietario_user_id, :criador_user_id => current_user_id, :ultimoalterar_user_id => current_user_id )
 
-    Lead.update(self.id, :proprietario_user_id => proprietario_user_id, :convertido => true)
+    Lead.update(self.id, :proprietario_user_id => proprietario_user_id, :convertido => true, :data_da_conversao => Time.now)
 
     return conta_id
 
