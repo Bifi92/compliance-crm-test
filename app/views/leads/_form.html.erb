@@ -5,17 +5,14 @@
     <div class="input-group input-group-sm">
 
       <br><h4><strong> Informações do lead <strong></h4></br>
+      
+      <%= f.association :proprietario_user, label: "Proprietário" %> 
 
-      <strong>
-        <%= "Proprietário: #{User.find_by_id(@lead.proprietario_user_id.nil? ? current_user.id : @lead.proprietario_user_id).name}" %>
-      </strong>
-      <br></br>
-
-      <%= f.input :saudacao, collection: @lead.tipos_saudacao, prompt: "Escolha a saudação" %>
+      <%= f.input :saudacao, collection: @lead.tipos_saudacao, label: "Saudação" , prompt: "Escolha a saudação" %>
       <%= f.input :nome %>
       <%= f.input :sobrenome %>
       <%= f.input :empresa %>
-      <%= f.input :titulo %>
+      <%= f.input :titulo, label: "Título" %>
       <%= f.input :status, collection: @lead.tipos_status, prompt: "Escolha o status" %>
       <%= f.input :fax %>
       <%= f.input :celular %>
@@ -23,7 +20,7 @@
       <%= f.input :recusar_telefonemas, collection: @lead.tipos_sim_nao, prompt: "Recusar telefonemas?" %>
       <%= f.input :email %>
       <%= f.input :recusar_emails, collection: @lead.tipos_sim_nao, prompt: "Recusar e-mails?" %>
-      <%= f.input :classificacao, collection: @lead.tipos_classificacao, prompt: "Escolha a classificação" %>
+      <%= f.input :classificacao, collection: @lead.tipos_classificacao, label: "Classificação", prompt: "Escolha a classificação" %>
 
       </br></br><h4><strong> Informações de endereço <strong></h4></br>
 
@@ -36,19 +33,19 @@
 
       </br></br><h4><strong> Informações adicionais <strong></h4></br>
 
-      <%= f.input :erp, collection: @lead.tipos_erp, prompt: "Escolha o ERP" %>
-      <%= f.input :solucao_fiscal, collection: @lead.tipos_solucao_fiscal, prompt: "Escolha a solução fiscal" %>
+      <%= f.input :erp, collection: @lead.tipos_erp, label: "ERP", prompt: "Escolha o ERP" %>
+      <%= f.input :solucao_fiscal, collection: @lead.tipos_solucao_fiscal, label: "Solução fiscal", prompt: "Escolha a solução fiscal" %>
       <%= f.input :origem, collection: @lead.tipos_origem, prompt: "Escolha a origem" %>
-      <%= f.input :qtde_funcionarios %>
-      <%= f.input :qtde_cnpj %>
+      <%= f.input :qtde_funcionarios, label: "Quantidade de funcionários" %>
+      <%= f.input :qtde_cnpj, label: "Quantidade de CNPJ" %>
       <%= f.input :setor, collection: @lead.tipos_setor, prompt: "Escolha o setor" %>
       <%= f.input :receita_anual, as: :decimal %>
-      <%= f.input :tipo_interesse %>
-      <%= f.input :produtos_interesse %>
+      <%= f.input :tipo_interesse, label: "Solução e/ou serviço de interesse" %>
+      <%= f.input :produtos_interesse, label: "Produtos de interesse" %>
 
       </br></br><h4><strong> Informações de descrição <strong></h4></br>
 
-      <%= f.input :descricao %>
+      <%= f.input :descricao, label: "Descrição" %>
     </div> <!-- input-group input-group-sm -->
   </div> <!-- form-inputs -->
 

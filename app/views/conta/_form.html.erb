@@ -16,7 +16,7 @@
       <%= f.input :nome %>
       <%= f.input :razao_social, label: "Razão Social" %>
       <%= f.input :fantasia %>
-      <%= f.input :cpf_cnpj, label: "CPF ou CNPJ" %>
+      <%= f.input :cpf_cnpj, label: "CPF/CNPJ" %>
       <%= f.input :fax %>
       <%= f.input :telefone %>
       <%= f.input :email_nfe, label: "Email NF-e" %>
@@ -31,7 +31,7 @@
       <%= f.input :receita_anual, as: :float %>
       <%= f.input :inscricao_municipal, label: "Inscrição municipal" %>
       <%= f.input :inscricao_estadual, label: "Inscrição estadual" %>
-      <%= f.association :countrycobr_country, label: "País de cobrança", label_method: :nome, prompt: "Escolha o pais"%>
+      <%= f.association :countrycobr_country, label: "País de cobrança", label_method: :nome, prompt: "Escolha o país"%>
       <%= f.association :estadocobr_estado, label: "Estado de cobrança", label_method: :nome, collection: [], prompt: "Escolha o estado" %>
       <%= f.association :cidadecobr_cidade, label: "Cidade de cobrança", label_method: :nome, collection: [], prompt: "Escolha a cidade" %>  
       <%= f.input :bairro_cobr, label: "Bairro de cobrança" %>
