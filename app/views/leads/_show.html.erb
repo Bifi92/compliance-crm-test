@@ -4,11 +4,33 @@
   </div>
   <div class="panel-body">
     <div class="row">
-      <strong>Status:</strong>
-      <%= @lead.status %>
+      <div class="alinhamento-campos">
+        <strong>Status:</strong></br>
+        <%= @lead.status %>
+      </div>      
 
-      <strong>Classificação:</strong>
-      <%= @lead.classificacao %>
+      <div class="alinhamento-campos">
+        <strong>Classificacao:</strong></br>        
+        <%= @lead.classificacao %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="alinhamento-campos">
+        <strong>Reconhecido:</strong>
+        <%= @lead.reconhecido %>
+      </div>
+      <div class="alinhamento-campos">
+        <strong>Motivo desqualificacao:</strong>
+        <%= @lead.motivo_desqualificacao %>
+      </div>
+      <div class="alinhamento-campos">
+        <strong>Convertido:</strong>
+        <%= @lead.convertido %>
+      </div>
+      <div class="alinhamento-campos">
+        <strong>Data da conversao:</strong>
+        <%= @lead.data_da_conversao %>
+      </div>
     </div>
   </div>  
 </div>
@@ -18,12 +40,10 @@
   </div>
   <div class="panel-body">
     <div class="row">
-      <strong>Proprietário:</strong>
-      <%= @lead.proprietario_user %>    
-    </div>    
-    <div class="row">
-      <strong>Empresa:</strong>
-      <%= @lead.empresa %>    
+      <div class="alinhamento-campos">
+        <strong>Empresa:</strong>
+        <%= @lead.empresa %>    
+      </div>
     </div>
     <div class="row">
       <strong>Saudação:</strong>
