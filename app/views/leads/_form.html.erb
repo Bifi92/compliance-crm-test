@@ -49,8 +49,8 @@
       <%= f.input :erp, collection: @lead.tipos_erp, prompt: "Escolha o ERP" %>
       <%= f.input :solucao_fiscal, collection: @lead.tipos_solucao_fiscal, prompt: "Escolha a solução fiscal" %>
       <%= f.input :origem, collection: @lead.tipos_origem, prompt: "Escolha a origem" %>
-      <%= f.input :qtde_funcionarios %>
-      <%= f.input :qtde_cnpj %>
+      <%= f.input :qtde_funcionarios, label: "Quantidade de funcionários" %>
+      <%= f.input :qtde_cnpj, label: "Quantidade de CNPJ" %>
       <%= f.input :setor, collection: @lead.tipos_setor, prompt: "Escolha o setor" %>
       <%= f.input :receita_anual, as: :decimal %>
       <%= f.input :tipo_interesse %>

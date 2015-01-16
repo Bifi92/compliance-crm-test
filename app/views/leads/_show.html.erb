@@ -46,10 +46,10 @@
       </div>
     </div>
     <div class="row">
-      <strong>Saudacao:</strong>
+      <strong>Saudação:</strong>
       <%= @lead.saudacao %>
 
-      <strong>Titulo:</strong>
+      <strong>Título:</strong>
       <%= @lead.titulo %>
     
       <strong>Nome:</strong>
@@ -89,14 +89,17 @@
       <strong>Rua:</strong>
       <%= @lead.rua %>
 
-       <strong>Cep:</strong>
+       <strong>CEP:</strong>
       <%= @lead.cep %>
     </div>
     <div class="row">
       <strong>Cidade:</strong>
       <%= @lead.cidade %>
-
-      <strong>Country:</strong>
+      
+      <strong>Estado:</strong>
+      <%= @lead.estado %>
+      
+      <strong>País:</strong>
       <%= @lead.country %>
     </div>
     <div class="row">
@@ -111,20 +114,20 @@
   </div>
   <div class="panel-body">
     <div class="row">
-      <strong>Erp:</strong>
+      <strong>ERP:</strong>
       <%= @lead.erp %>
 
-      <strong>Solucao fiscal:</strong>
+      <strong>Solução fiscal:</strong>
       <%= @lead.solucao_fiscal %>
 
       <strong>Origem:</strong>
       <%= @lead.origem %>
     </div>
     <div class="row">
-      <strong>Qtde funcionarios:</strong>
+      <strong>Quantidade de funcionários:</strong>
       <%= @lead.qtde_funcionarios %>
 
-      <strong>Qtde cnpj:</strong>
+      <strong>Quantidade de CNPJ:</strong>
       <%= @lead.qtde_cnpj %>
 
       <strong>Receita anual:</strong>
@@ -133,15 +136,18 @@
       <strong>Setor:</strong>
       <%= @lead.setor %>
 
-      <strong>Orcamento aprovado:</strong>
-      <%= @lead.orcamento_aprovado %>
     </div>
     <div class="row">
-      <strong>Produtos interesse:</strong>
+      <strong>Produtos de interesse:</strong>
       <%= @lead.produtos_interesse %>
 
-      <strong>Tipo interesse:</strong>
+      <strong>Solução e/ou serviço de interesse:</strong>
       <%= @lead.tipo_interesse %>
+
+      <strong>Criado por: </strong><%= @lead.criador_user %>, <%= @lead.created_at.strftime("%d/%m/%Y %H:%M") %>
+
+      <strong>Última modificação feita por: </strong><%= @lead.ultimoalterar_user %>, <%= @lead.updated_at.strftime("%d/%m/%Y %H:%M") %>
+
     </div>
   </div>
 </div>
@@ -151,7 +157,7 @@
   </div>
   <div class="panel-body">
     <div class="row">
-      <strong>Descricao:</strong>
+      <strong>Descrição:</strong>
       <%= @lead.descricao %>
     </div>
   </div>
