@@ -1,204 +1,243 @@
-<p>
-  <strong>Contum:</strong>
-  <%= @contato.contum %>
-</p>
-
-<p>
-  <strong>Contato:</strong>
-  <%= @contato.contato %>
-</p>
-
-<p>
-  <strong>Saudacao:</strong>
-  <%= @contato.saudacao %>
-</p>
-
-<p>
-  <strong>Sexo:</strong>
-  <%= @contato.sexo %>
-</p>
-
-<p>
-  <strong>Titulo:</strong>
-  <%= @contato.titulo %>
-</p>
-
-<p>
-  <strong>Nome:</strong>
-  <%= @contato.nome %>
-</p>
-
-<p>
-  <strong>Sobrenome:</strong>
-  <%= @contato.sobrenome %>
-</p>
-
-<p>
-  <strong>Data nascimento:</strong>
-  <%= @contato.data_nascimento %>
-</p>
-
-<p>
-  <strong>Empresa:</strong>
-  <%= @contato.empresa %>
-</p>
-
-<p>
-  <strong>Departamento:</strong>
-  <%= @contato.departamento %>
-</p>
-
-<p>
-  <strong>Cpf:</strong>
-  <%= @contato.cpf %>
-</p>
-
-<p>
-  <strong>Descricao:</strong>
-  <%= @contato.descricao %>
-</p>
-
-<p>
-  <strong>Email pessoal:</strong>
-  <%= @contato.email_pessoal %>
-</p>
-
-<p>
-  <strong>Email corporativo:</strong>
-  <%= @contato.email_corporativo %>
-</p>
-
-<p>
-  <strong>Nome assistente:</strong>
-  <%= @contato.nome_assistente %>
-</p>
-
-<p>
-  <strong>Telefone assistente:</strong>
-  <%= @contato.telefone_assistente %>
-</p>
-
-<p>
-  <strong>Data devolucao email:</strong>
-  <%= @contato.data_devolucao_email %>
-</p>
-
-<p>
-  <strong>Motivo devolucao email:</strong>
-  <%= @contato.motivo_devolucao_email %>
-</p>
-
-<p>
-  <strong>Recusar emails:</strong>
-  <%= @contato.recusar_emails %>
-</p>
-
-<p>
-  <strong>Fax:</strong>
-  <%= @contato.fax %>
-</p>
-
-<p>
-  <strong>Recusar fax:</strong>
-  <%= @contato.recusar_fax %>
-</p>
-
-<p>
-  <strong>Telefone residencial:</strong>
-  <%= @contato.telefone_residencial %>
-</p>
-
-<p>
-  <strong>Telefone comercial:</strong>
-  <%= @contato.telefone_comercial %>
-</p>
-
-<p>
-  <strong>Celular:</strong>
-  <%= @contato.celular %>
-</p>
-
-<p>
-  <strong>Outro telefone:</strong>
-  <%= @contato.outro_telefone %>
-</p>
-
-<p>
-  <strong>Recusar telefonemas:</strong>
-  <%= @contato.recusar_telefonemas %>
-</p>
-
-<p>
-  <strong>Bairro corre:</strong>
-  <%= @contato.bairro_corre %>
-</p>
-
-<p>
-  <strong>Rua corre:</strong>
-  <%= @contato.rua_corre %>
-</p>
-
-<p>
-  <strong>Numero corre:</strong>
-  <%= @contato.numero_corre %>
-</p>
-
-<p>
-  <strong>Complemento corre:</strong>
-  <%= @contato.complemento_corre %>
-</p>
-
-<p>
-  <strong>Cep corre:</strong>
-  <%= @contato.cep_corre %>
-</p>
-
-<p>
-  <strong>Bairro corpo:</strong>
-  <%= @contato.bairro_corpo %>
-</p>
-
-<p>
-  <strong>Logradouro:</strong>
-  <%= @contato.logradouro %>
-</p>
-
-<p>
-  <strong>Rua corpo:</strong>
-  <%= @contato.rua_corpo %>
-</p>
-
-<p>
-  <strong>Numero corpo:</strong>
-  <%= @contato.numero_corpo %>
-</p>
-
-<p>
-  <strong>Complemento corpo:</strong>
-  <%= @contato.complemento_corpo %>
-</p>
-
-<p>
-  <strong>Cep corpo:</strong>
-  <%= @contato.cep_corpo %>
-</p>
-
-<p>
-  <strong>Esporte preferido:</strong>
-  <%= @contato.esporte_preferido %>
-</p>
-
-<p>
-  <strong>Hobby:</strong>
-  <%= @contato.hobby %>
-</p>
-
-<p>
-  <strong>Excluido:</strong>
-  <%= @contato.excluido %>
-</p>
-
-<p>
-  <strong>Origem lead:</strong>
-  <%= @contato.origem_lead %>
-</p>
+<div class="panel panel-info">
+  <div class="panel-heading">
+     <h6 class="panel-title">Informações do contato</h6>
+  </div>
+  <div class="panel-body">
+    <% if @contato.excluido %>
+      <div class="alert alert-danger" role="alert">Item excluído</div>
+    <% end %>
+    <div class="row">
+      <div class="exibicao">
+        <strong>Origem lead:</strong>
+        <%= @contato.origem_lead %>
+      </div>
+      <div class="exibicao">
+        <strong>Conta:</strong>
+        <%= @contato.contum %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="exibicao">
+        <strong>Saudacao:</strong>
+        <%= @contato.saudacao %>
+      </div>
+       <div class="exibicao">
+        <strong>Titulo:</strong>
+        <%= @contato.titulo %>
+      </div>
+      <div class="exibicao">
+        <strong>Nome:</strong>
+        <%= @contato.nome %>
+      </div>
+      <div class="exibicao">
+        <strong>Sobrenome:</strong>
+        <%= @contato.sobrenome %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="exibicao">
+        <strong>Data nascimento:</strong>
+        <%= @contato.data_nascimento %>
+      </div>
+      <div class="exibicao">
+        <strong>Cpf:</strong>
+        <%= @contato.cpf %>
+      </div>
+      <div class="exibicao">
+        <strong>Sexo:</strong>
+        <%= @contato.sexo %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="exibicao">
+        <strong>Empresa:</strong>
+        <%= @contato.empresa %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="exibicao">
+        <strong>Departamento:</strong>
+        <%= @contato.departamento %>
+      </div>
+      <div class="exibicao">
+        <strong>Reporta-se a:</strong>
+        <%= @contato.contato %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="exibicao">
+        <strong>Nome assistente:</strong>
+        <%= @contato.nome_assistente %>
+      </div>
+      <div class="exibicao">
+        <strong>Telefone assistente:</strong>
+        <%= @contato.telefone_assistente %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="exibicao">
+        <strong>Descricao:</strong>
+        <%= @contato.descricao %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="exibicao">
+        <strong>E-mail pessoal:</strong>
+        <%= @contato.email_pessoal %>
+      </div>
+      <div class="exibicao">
+        <strong>E-mail corporativo:</strong>
+        <%= @contato.email_corporativo %>
+      </div>
+      <div class="exibicao">
+        <strong>Data devolução email:</strong>
+        <%= @contato.data_devolucao_email %>
+      </div>
+      <div class="exibicao">
+        <strong>Recusar emails:</strong>
+        <%= @contato.recusar_emails %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="exibicao">
+        <strong>Motivo devolucao email:</strong>
+        <%= @contato.motivo_devolucao_email %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="exibicao">
+        <strong>Telefone residencial:</strong>
+        <%= @contato.telefone_residencial %>
+      </div>
+      <div class="exibicao">
+        <strong>Telefone comercial:</strong>
+        <%= @contato.telefone_comercial %>
+      </div>
+      <div class="exibicao">
+        <strong>Celular:</strong>
+        <%= @contato.celular %>
+      </div>
+      <div class="exibicao">
+        <strong>Outro telefone:</strong>
+        <%= @contato.outro_telefone %>
+      </div>
+      <div class="exibicao">
+        <strong>Recusar telefonemas:</strong>
+        <%= @contato.recusar_telefonemas %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="exibicao">
+        <strong>Fax:</strong>
+        <%= @contato.fax %>
+      </div>
+      <div class="exibicao">
+        <strong>Recusar fax:</strong>
+        <%= @contato.recusar_fax %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="exibicao">
+        <strong>Esporte preferido:</strong>
+        <%= @contato.esporte_preferido %>
+      </div>
+      <div class="exibicao">
+        <strong>Hobby:</strong>
+        <%= @contato.hobby %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h6 class="panel-title">Informações de Correspondência</h6>
+  </div>
+  <div class="panel-body">
+    <div class="panel">
+      <div class="panel-heading">
+        <h6 class="panel-title">Pessoal</h6>
+      </div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="exibicao">
+            <strong>CEP:</strong>
+            <%= @contato.cep_corre %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="exibicao">
+            <strong>Rua:</strong>
+            <%= @contato.rua_corre %>
+          </div>
+          <div class="exibicao">
+            <strong>Número:</strong>
+            <%= @contato.numero_corre %>
+          </div>
+          <div class="exibicao">
+            <strong>Complemento:</strong>
+            <%= @contato.complemento_corre %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="exibicao">
+            <strong>Bairro:</strong>
+            <%= @contato.bairro_corre %>
+          </div>
+          <div class="exibicao">
+            <strong>Cidade:</strong>
+            <%= @contato.cidadecorre_cidade_id %>
+          </div>
+          <div class="exibicao">
+            <strong>UF:</strong>
+            <%= @contato.estadocorre_estado_id %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-heading">
+        <h6 class="panel-title">Corporativo</h6>
+      </div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="exibicao">
+            <strong>CEP:</strong>
+            <%= @contato.cep_corpo %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="exibicao">
+            <strong>Logradouro:</strong>
+            <%= @contato.logradouro %>
+          </div>
+          <div class="exibicao">
+            <strong>Rua:</strong>
+            <%= @contato.rua_corpo %>
+          </div>
+          <div class="exibicao">
+            <strong>Numero:</strong>
+            <%= @contato.numero_corpo %>
+          </div>
+          <div class="exibicao">
+            <strong>Complemento:</strong>
+            <%= @contato.complemento_corpo %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="exibicao">
+            <strong>Bairro:</strong>
+            <%= @contato.bairro_corpo %>
+          </div>
+          <div class="exibicao">
+            <strong>Cidade:</strong>
+            <%= @contato.cidadecorpo_cidade_id %>
+          </div>
+          <div class="exibicao">
+            <strong>UF:</strong>
+            <%= @contato.estadocorpo_estado_id %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

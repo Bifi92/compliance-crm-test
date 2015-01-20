@@ -10,7 +10,7 @@
       <strong>
         <%= "Proprietário: #{User.find_by_id(@lead.proprietario_user_id.nil? ? current_user.id : @lead.proprietario_user_id).name}" %>
       </strong>
-      </br>
+      </br></br>
       <%= f.input :saudacao, collection: @lead.tipos_saudacao, prompt: "Escolha a saudação" %>
       <%= f.input :titulo %>
       <%= f.input :nome %>
