@@ -14,8 +14,9 @@
  *= require_self
  */
 
-.alinhamento-campos{
+.exibicao{
   display: inline-block;
   vertical-align: top;
-  padding: 0.5%
+  white-space: pre-wrap;
+  word-wrap: break-word;
 }

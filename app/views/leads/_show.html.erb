@@ -4,30 +4,29 @@
   </div>
   <div class="panel-body">
     <div class="row">
-      <div class="alinhamento-campos">
-        <strong>Status:</strong></br>
+      <div class="exibicao">
+        <strong>Status:</strong>
         <%= @lead.status %>
       </div>      
-
-      <div class="alinhamento-campos">
-        <strong>Classificacao:</strong></br>        
+      <div class="exibicao">
+        <strong>Classificacao:</strong>
         <%= @lead.classificacao %>
       </div>
     </div>
     <div class="row">
-      <div class="alinhamento-campos">
+      <div class="exibicao">
         <strong>Reconhecido:</strong>
         <%= @lead.reconhecido %>
       </div>
-      <div class="alinhamento-campos">
+      <div class="exibicao">
         <strong>Motivo desqualificacao:</strong>
         <%= @lead.motivo_desqualificacao %>
       </div>
-      <div class="alinhamento-campos">
+      <div class="exibicao">
         <strong>Convertido:</strong>
         <%= @lead.convertido %>
       </div>
-      <div class="alinhamento-campos">
+      <div class="exibicao">
         <strong>Data da conversao:</strong>
         <%= @lead.data_da_conversao %>
       </div>
@@ -40,43 +39,63 @@
   </div>
   <div class="panel-body">
     <div class="row">
-      <div class="alinhamento-campos">
+      <div class="exibicao">
         <strong>Empresa:</strong>
         <%= @lead.empresa %>    
       </div>
     </div>
     <div class="row">
-      <strong>Saudação:</strong>
-      <%= @lead.saudacao %>
-
-      <strong>Título:</strong>
-      <%= @lead.titulo %>
+      <div class="exibicao">
+        <strong>Saudação:</strong>
+        <%= @lead.saudacao %>
+      </div>
+      
+      <div class="exibicao">
+        <strong>Título:</strong>
+        <%= @lead.titulo %>
+      </div>
     
-      <strong>Nome:</strong>
-      <%= @lead.nome %>
+      <div class="exibicao">
+        <strong>Nome:</strong>
+        <%= @lead.nome %>
+      </div>
     
-      <strong>Sobrenome:</strong>
-      <%= @lead.sobrenome %>
+      <div class="exibicao">
+        <strong>Sobrenome:</strong>
+        <%= @lead.sobrenome %>
+      </div>
     </div>
     <div class="row">
-      <strong>Telefone:</strong>
-      <%= @lead.telefone %>
+      <div class="exibicao">
+        <strong>Telefone:</strong>
+        <%= @lead.telefone %>
+      </div>
 
-      <strong>Celular:</strong>
-      <%= @lead.celular %>
+      <div class="exibicao">
+        <strong>Celular:</strong>
+        <%= @lead.celular %>
+      </div>
 
-      <strong>Fax:</strong>
-      <%= @lead.fax %>
+      <div class="exibicao">
+        <strong>Fax:</strong>
+        <%= @lead.fax %>
+      </div>
 
-      <strong>Recusar telefonemas:</strong>
-      <%= @lead.recusar_telefonemas %>
+      <div class="exibicao">
+        <strong>Recusar telefonemas:</strong>
+        <%= @lead.recusar_telefonemas %>
+      </div>
     </div>
     <div class="row">
-      <strong>Email:</strong>
-      <%= @lead.email %>
+      <div class="exibicao">
+        <strong>Email:</strong>
+        <%= @lead.email %>
+      </div>
 
-      <strong>Recusar emails:</strong>
-      <%= @lead.recusar_emails %>
+      <div class="exibicao">
+        <strong>Recusar emails:</strong>
+        <%= @lead.recusar_emails %>
+      </div>
     </div>
   </div>
 </div>
@@ -86,25 +105,37 @@
   </div>
   <div class="panel-body">
     <div class="row">
-      <strong>Rua:</strong>
-      <%= @lead.rua %>
+      <div class="exibicao">
+        <strong>Rua:</strong>
+        <%= @lead.rua %>
+      </div>
 
-       <strong>CEP:</strong>
-      <%= @lead.cep %>
+      <div class="exibicao">
+        <strong>CEP:</strong>
+        <%= @lead.cep %>
+      </div>
     </div>
     <div class="row">
-      <strong>Cidade:</strong>
-      <%= @lead.cidade %>
+      <div class="exibicao">
+        <strong>Cidade:</strong>
+        <%= @lead.cidade %>
+      </div>
       
-      <strong>Estado:</strong>
-      <%= @lead.estado %>
+      <div class="exibicao">
+        <strong>Estado:</strong>
+        <%= @lead.estado %>
+      </div>
       
-      <strong>País:</strong>
-      <%= @lead.country %>
+      <div class="exibicao">
+        <strong>País:</strong>
+        <%= @lead.country %>
+      </div>
     </div>
     <div class="row">
-      <strong>Site:</strong>
-      <%= @lead.site %>
+      <div class="exibicao">
+        <strong>Site:</strong>
+        <%= @lead.site %>
+      </div>
     </div>
   </div>
 </div>
@@ -114,40 +145,62 @@
   </div>
   <div class="panel-body">
     <div class="row">
-      <strong>ERP:</strong>
-      <%= @lead.erp %>
+      <div class="exibicao">
+        <strong>ERP:</strong>
+        <%= @lead.erp %>
+      </div>
 
-      <strong>Solução fiscal:</strong>
-      <%= @lead.solucao_fiscal %>
+      <div class="exibicao">
+        <strong>Solução fiscal:</strong>
+        <%= @lead.solucao_fiscal %>
+      </div>
 
-      <strong>Origem:</strong>
-      <%= @lead.origem %>
+      <div class="exibicao">
+        <strong>Origem:</strong>
+        <%= @lead.origem %>
+      </div>
     </div>
     <div class="row">
-      <strong>Quantidade de funcionários:</strong>
-      <%= @lead.qtde_funcionarios %>
+      <div class="exibicao">
+        <strong>Quantidade de funcionários:</strong>
+        <%= @lead.qtde_funcionarios %>
+      </div>
 
-      <strong>Quantidade de CNPJ:</strong>
-      <%= @lead.qtde_cnpj %>
+      <div class="exibicao">
+        <strong>Quantidade de CNPJ:</strong>
+        <%= @lead.qtde_cnpj %>
+      </div>
 
-      <strong>Receita anual:</strong>
-      <%= @lead.receita_anual %>
+      <div class="exibicao">
+        <strong>Receita anual:</strong>
+        <%= @lead.receita_anual %>
+      </div>
 
-      <strong>Setor:</strong>
-      <%= @lead.setor %>
-
+      <div class="exibicao">
+        <strong>Setor:</strong>
+        <%= @lead.setor %>
+      </div>
     </div>
     <div class="row">
-      <strong>Produtos de interesse:</strong>
-      <%= @lead.produtos_interesse %>
+      <div class="exibicao">
+        <strong>Produtos de interesse:</strong>
+        <%= @lead.produtos_interesse %>
+      </div>
 
-      <strong>Solução e/ou serviço de interesse:</strong>
-      <%= @lead.tipo_interesse %>
+      <div class="exibicao">
+        <strong>Solução e/ou serviço de interesse:</strong>
+        <%= @lead.tipo_interesse %>
+      </div>
 
-      <strong>Criado por: </strong><%= @lead.criador_user %>, <%= @lead.created_at.strftime("%d/%m/%Y %H:%M") %>
+      <div class="exibicao">
+        <strong>Criado por: </strong>
+        <%= @lead.criador_user %>, <%= @lead.created_at.strftime("%d/%m/%Y %H:%M") %>
+      </div>
 
-      <strong>Última modificação feita por: </strong><%= @lead.ultimoalterar_user %>, <%= @lead.updated_at.strftime("%d/%m/%Y %H:%M") %>
-
+      <div class="exibicao">
+        <strong>Última modificação feita por: </strong>
+        <%= @lead.ultimoalterar_user %>, <%= @lead.updated_at.strftime("%d/%m/%Y %H:%M") %>
+      </div>
     </div>
   </div>
 </div>
@@ -157,8 +210,10 @@
   </div>
   <div class="panel-body">
     <div class="row">
-      <strong>Descrição:</strong>
-      <%= @lead.descricao %>
+      <div class="exibicao">
+        <strong>Descrição:</strong>
+        <%= @lead.descricao %>
+      </div>
     </div>
   </div>
 </div>
