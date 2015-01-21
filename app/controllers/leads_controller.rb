@@ -1,6 +1,7 @@
 class LeadsController < ApplicationController
   before_action :require_authentication
   before_action :set_lead, only: [:show, :edit, :update, :destroy]
+  before_action :check_user_owner, only: [:show, :edit]
 
   respond_to :html
 
@@ -58,10 +59,20 @@ class LeadsController < ApplicationController
 
   private
     def set_lead
-      @lead = Lead.find(params[:id])
+      begin
+        @lead = Lead.find(params[:id])
+      rescue
+        render_404
+      end
     end
 
     def lead_params
       params.require(:lead).permit(:saudacao, :empresa, :nome, :sobrenome, :titulo, :status, :descricao, :erp, :solucao_fiscal, :country_id, :estado_id, :cidade_id, :rua, :cep, :origem, :reconhecido, :classificacao, :motivo_desqualificacao, :orcamento_aprovado, :convertido, :data_da_conversao, :fax, :celular, :telefone, :recusar_telefonemas, :email, :recusar_emails, :site, :qtde_funcionarios, :qtde_cnpj, :setor, :receita_anual, :tipo_interesse, :produtos_interesse)
+    end
+
+    def check_user_owner
+      if @lead.proprietario_user_id != current_user.id
+        redirect_to leads_path, alert: "You are not the owner of this object"
+      end
     end
 end
