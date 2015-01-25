@@ -1,18 +1,15 @@
 <%= simple_form_for(@contum) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <div class="input-group input-group-sm">
-
-      <br><h4><strong> Informações da conta <strong></h4>
-
-      <br>
-        <strong>
-          <%= "Proprietário: #{User.find_by_id(@contum.proprietario_user_id.nil? ? current_user.id : @contum.proprietario_user_id).name}" %>
-        </strong>
-        <br>
-      </br>
-
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <h6 class="panel-title">Informações da conta</h6>
+    </div>
+    <div class="panel-body">
+      <strong>
+        <%= "Proprietário: #{User.find_by_id(@contum.proprietario_user_id.nil? ? current_user.id : @contum.proprietario_user_id).name}" %>
+      </strong>
+      </br></br>
       <%= f.input :nome %>
       <%= f.input :razao_social, label: "Razão Social" %>
       <%= f.input :fantasia %>
@@ -21,9 +18,13 @@
       <%= f.input :telefone %>
       <%= f.input :email_nfe, label: "Email NF-e" %>
       <%= f.input :site %>
-
-      </br></br><h4><strong> Informações adicionais <strong></h4></br>
-
+    </div>
+  </div>
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <h6 class="panel-title">Informações adicionais</h6>
+    </div>
+    <div class="panel-body">
       <%= f.input :qtde_funcionarios, label: "Quantidade de funcionários", html5: true %>
       <%= f.input :propriedade, collection: @contum.tipos_propriedade, prompt: "Escolha o tipo de propriedade" %>
       <%= f.input :tipo_conta, collection: @contum.tipos_conta, label: "Tipo de conta", prompt: "Escolha o tipo de conta" %>
@@ -31,23 +32,44 @@
       <%= f.input :receita_anual, as: :float %>
       <%= f.input :inscricao_municipal, label: "Inscrição municipal" %>
       <%= f.input :inscricao_estadual, label: "Inscrição estadual" %>
-      <%= f.association :countrycobr_country, label: "País de cobrança", label_method: :nome, prompt: "Escolha o país"%>
-      <%= f.association :estadocobr_estado, label: "Estado de cobrança", label_method: :nome, collection: [], prompt: "Escolha o estado" %>
-      <%= f.association :cidadecobr_cidade, label: "Cidade de cobrança", label_method: :nome, collection: [], prompt: "Escolha a cidade" %>  
-      <%= f.input :bairro_cobr, label: "Bairro de cobrança" %>
-      <%= f.input :rua_cobr, label: "Rua de cobrança" %>
-      <%= f.input :numero_cobr, label: "Número de cobrança" %>
-      <%= f.input :complemento_cobr, label: "Complemento de cobrança" %>
-      <%= f.input :cep_cobr, label: "CEP de cobrança" %>
-      <%= f.association :countryentr_country, label: "País de entrega", label_method: :nome, prompt: "Escolha o pais"%>
-      <%= f.association :estadoentr_estado, label: "Estado de entrega", label_method: :nome, collection: [], prompt: "Escolha o estado" %>
-      <%= f.association :cidadeentr_cidade, label: "Cidade de entrega", label_method: :nome, collection: [], prompt: "Escolha a cidade" %>      
-      <%= f.input :bairro_entr, label: "Bairro de entrega" %>
-      <%= f.input :rua_entr, label: "Rua de entrega" %>
-      <%= f.input :numero_entr, label: "Número de entrega" %>
-      <%= f.input :complemento_entr, label: "Complemento de entrega" %>
-      <%= f.input :cep_entr, label: "CEP de entrega" %>
       <%= f.input :descricao, label: "Descrição " %>
+    </div>
+  </div>
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <h6 class="panel-title">Informações de Correspondência</h6>
+    </div>
+    <div class="panel-body">
+      <div class="panel">
+        <div class="panel-heading">
+          <h6 class="panel-title">Cobrança</h6>
+        </div>
+        <div class="panel-body">
+          <%= f.association :countrycobr_country, label: "País", label_method: :nome, prompt: "Escolha o país" %>
+          <%= f.association :estadocobr_estado, label: "Estado", label_method: :nome, collection: [], prompt: "Escolha o estado" %>
+          <%= f.association :cidadecobr_cidade, label: "Cidade", label_method: :nome, collection: [], prompt: "Escolha a cidade" %>  
+          <%= f.input :bairro_cobr, label: "Bairro" %>
+          <%= f.input :rua_cobr, label: "Rua" %>
+          <%= f.input :numero_cobr, label: "Número" %>
+          <%= f.input :complemento_cobr, label: "Complemento" %>
+          <%= f.input :cep_cobr, label: "CEP" %>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="panel-heading">
+          <h6 class="panel-title">Entrega</h6>
+        </div>
+        <div class="panel-body">
+          <%= f.association :countryentr_country, label: "País", label_method: :nome, prompt: "Escolha o pais" %>
+          <%= f.association :estadoentr_estado, label: "Estado", label_method: :nome, collection: [], prompt: "Escolha o estado" %>
+          <%= f.association :cidadeentr_cidade, label: "Cidade", label_method: :nome, collection: [], prompt: "Escolha a cidade" %>      
+          <%= f.input :bairro_entr, label: "Bairro" %>
+          <%= f.input :rua_entr, label: "Rua" %>
+          <%= f.input :numero_entr, label: "Número" %>
+          <%= f.input :complemento_entr, label: "Complemento" %>
+          <%= f.input :cep_entr, label: "CEP" %>
+        </div>
+      </div>
     </div>
   </div>
 
