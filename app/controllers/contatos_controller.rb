@@ -45,7 +45,7 @@ class ContatosController < ApplicationController
   private
     def set_contato
       begin
-        @contato = Contato.find(params[:id])
+        @contato = Contato.friendly.find(params[:id])
       rescue
         render_404
       end

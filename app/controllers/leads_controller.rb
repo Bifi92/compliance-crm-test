@@ -60,7 +60,7 @@ class LeadsController < ApplicationController
   private
     def set_lead
       begin
-        @lead = Lead.find(params[:id])
+        @lead = Lead.friendly.find(params[:id])
       rescue
         render_404
       end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150109010341) do
+ActiveRecord::Schema.define(version: 20150130195513) do
 
   create_table "cidades", force: :cascade do |t|
     t.integer  "estado_id"
@@ -62,7 +62,10 @@ ActiveRecord::Schema.define(version: 20150109010341) do
     t.integer  "countryentr_country_id"
     t.integer  "estadoentr_estado_id"
     t.integer  "cidadeentr_cidade_id"
+    t.string   "slug"
   end
+
+  add_index "conta", ["slug"], name: "index_conta_on_slug"
 
   create_table "contatos", force: :cascade do |t|
     t.integer  "contum_id"
@@ -117,10 +120,12 @@ ActiveRecord::Schema.define(version: 20150109010341) do
     t.integer  "estadocorpo_estado_id"
     t.integer  "cidadecorpo_cidade_id"
     t.integer  "criador_user_id"
+    t.string   "slug"
   end
 
   add_index "contatos", ["contato_id"], name: "index_contatos_on_contato_id"
   add_index "contatos", ["contum_id"], name: "index_contatos_on_contum_id"
+  add_index "contatos", ["slug"], name: "index_contatos_on_slug", unique: true
 
   create_table "countries", force: :cascade do |t|
     t.string   "nome"
@@ -137,6 +142,19 @@ ActiveRecord::Schema.define(version: 20150109010341) do
   end
 
   add_index "estados", ["country_id"], name: "index_estados_on_country_id"
+
+  create_table "friendly_id_slugs", force: :cascade do |t|
+    t.string   "slug",                      null: false
+    t.integer  "sluggable_id",              null: false
+    t.string   "sluggable_type", limit: 50
+    t.string   "scope"
+    t.datetime "created_at"
+  end
+
+  add_index "friendly_id_slugs", ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
+  add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
+  add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
+  add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
 
   create_table "leads", force: :cascade do |t|
     t.string   "saudacao"
@@ -178,11 +196,13 @@ ActiveRecord::Schema.define(version: 20150109010341) do
     t.integer  "criador_user_id"
     t.integer  "proprietario_user_id"
     t.integer  "ultimoalterar_user_id"
+    t.string   "slug"
   end
 
   add_index "leads", ["cidade_id"], name: "index_leads_on_cidade_id"
   add_index "leads", ["country_id"], name: "index_leads_on_country_id"
   add_index "leads", ["estado_id"], name: "index_leads_on_estado_id"
+  add_index "leads", ["slug"], name: "index_leads_on_slug"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

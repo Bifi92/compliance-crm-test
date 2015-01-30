@@ -1,4 +1,6 @@
 class Lead < ActiveRecord::Base
+  extend FriendlyId
+
   belongs_to :country
   belongs_to :estado
   belongs_to :cidade
@@ -20,6 +22,8 @@ class Lead < ActiveRecord::Base
 
   scope :by_user_id, -> (proprietario_user_id) { where(:proprietario_user_id => proprietario_user_id) }
   scope :not_converted_by_user_id, -> (proprietario_user_id) { where(:proprietario_user_id => proprietario_user_id, :convertido => false) }
+
+  friendly_id :nome, use: :slugged
 
   def to_s
     "#{nome} #{sobrenome}".strip
