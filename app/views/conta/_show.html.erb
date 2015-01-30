@@ -1,134 +1,168 @@
-<p>
-  <strong>Nome:</strong>
-  <%= @contum.nome %>
-</p>
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h6 class="panel-title">Informações da conta</h6>
+  </div>
+  <div class="panel-body">
+    <% if @contum.excluida %>
+      <div class="alert alert-danger" role="alert">Item excluído</div>
+    <% end %>
+    <div class="row">
+      <div class="exibicao">
+        <strong>Nome:</strong>
+        <%= @contum.nome %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="exibicao">
+        <strong>Razão social:</strong>
+        <%= @contum.razao_social %>
+      </div>
+      <div class="exibicao">
+        <strong>Fantasia:</strong>
+        <%= @contum.fantasia %>
+      </div>
+      <div class="exibicao">
+        <strong>CPF/CNPJ:</strong>
+        <%= @contum.cpf_cnpj %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="exibicao">
+        <strong>Fax:</strong>
+        <%= @contum.fax %>
+      </div>
+      <div class="exibicao">
+        <strong>Telefone:</strong>
+        <%= @contum.telefone %>
+      </div>
+      <div class="exibicao">
+        <strong>Email nfe:</strong>
+        <%= @contum.email_nfe %>
+      </div>
+      <div class="exibicao">
+        <strong>Site:</strong>
+        <%= @contum.site %>
+      </div>
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>Razão social:</strong>
-  <%= @contum.razao_social %>
-</p>
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h6 class="panel-title">Informações adicionais</h6>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="exibicao">
+        <strong>Setor:</strong>
+        <%= @contum.setor %>
+      </div>
+      <div class="exibicao">
+        <strong>Quantidade de funcionários:</strong>
+        <%= @contum.qtde_funcionarios %>
+      </div>
+      <div class="exibicao">
+        <strong>Receita anual:</strong>
+        <%= @contum.receita_anual %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="exibicao">
+        <strong>Propriedade:</strong>
+        <%= @contum.propriedade %>
+      </div>
+      <div class="exibicao">
+        <strong>Tipo de conta:</strong>
+        <%= @contum.tipo_conta %>
+      </div>
+      <div class="exibicao">
+        <strong>Inscrição municipal:</strong>
+        <%= @contum.inscricao_municipal %>
+      </div>
+      <div class="exibicao">
+        <strong>Inscrição estadual:</strong>
+        <%= @contum.inscricao_estadual %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="exibicao">
+        <strong>Descrição:</strong>
+        <%= @contum.descricao %>
+      </div>
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>Fantasia:</strong>
-  <%= @contum.fantasia %>
-</p>
-
-<p>
-  <strong>CPF/CNPJ:</strong>
-  <%= @contum.cpf_cnpj %>
-</p>
-
-<p>
-  <strong>Quantidade de funcionários:</strong>
-  <%= @contum.qtde_funcionarios %>
-</p>
-
-<p>
-  <strong>Propriedade:</strong>
-  <%= @contum.propriedade %>
-</p>
-
-<p>
-  <strong>Tipo de conta:</strong>
-  <%= @contum.tipo_conta %>
-</p>
-
-<p>
-  <strong>Setor:</strong>
-  <%= @contum.setor %>
-</p>
-
-<p>
-  <strong>Receita anual:</strong>
-  <%= @contum.receita_anual %>
-</p>
-
-<p>
-  <strong>Fax:</strong>
-  <%= @contum.fax %>
-</p>
-
-<p>
-  <strong>Telefone:</strong>
-  <%= @contum.telefone %>
-</p>
-
-<p>
-  <strong>Email nfe:</strong>
-  <%= @contum.email_nfe %>
-</p>
-
-<p>
-  <strong>Site:</strong>
-  <%= @contum.site %>
-</p>
-
-<p>
-  <strong>Inscrição municipal:</strong>
-  <%= @contum.inscricao_municipal %>
-</p>
-
-<p>
-  <strong>Inscrição estadual:</strong>
-  <%= @contum.inscricao_estadual %>
-</p>
-
-<p>
-  <strong>Bairro de cobrança:</strong>
-  <%= @contum.bairro_cobr %>
-</p>
-
-<p>
-  <strong>Rua de cobrança:</strong>
-  <%= @contum.rua_cobr %>
-</p>
-
-<p>
-  <strong>Número de cobrança:</strong>
-  <%= @contum.numero_cobr %>
-</p>
-
-<p>
-  <strong>Complemento de cobrança:</strong>
-  <%= @contum.complemento_cobr %>
-</p>
-
-<p>
-  <strong>CEP de cobrança:</strong>
-  <%= @contum.cep_cobr %>
-</p>
-
-<p>
-  <strong>Bairro de entrega:</strong>
-  <%= @contum.bairro_entr %>
-</p>
-
-<p>
-  <strong>Rua de entrega:</strong>
-  <%= @contum.rua_entr %>
-</p>
-
-<p>
-  <strong>Número de entrega:</strong>
-  <%= @contum.numero_entr %>
-</p>
-
-<p>
-  <strong>Complemento de entrega:</strong>
-  <%= @contum.complemento_entr %>
-</p>
-
-<p>
-  <strong>CEP de entrega:</strong>
-  <%= @contum.cep_entr %>
-</p>
-
-<p>
-  <strong>Descrição:</strong>
-  <%= @contum.descricao %>
-</p>
-
-<p>
-  <strong>Excluída:</strong>
-  <%= @contum.excluida %>
-</p>
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h6 class="panel-title">Informações adicionais</h6>
+  </div>
+  <div class="panel-body">
+    <div>
+      <div class="panel-heading">
+        <h6 class="panel-title">Cobrança</h6>
+      </div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="exibicao">
+            <strong>CEP:</strong>
+            <%= @contum.cep_cobr %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="exibicao">
+            <strong>Rua:</strong>
+            <%= @contum.rua_cobr %>
+          </div>
+          <div class="exibicao">
+            <strong>Número:</strong>
+            <%= @contum.numero_cobr %>
+          </div>
+          <div class="exibicao">
+            <strong>Complemento:</strong>
+            <%= @contum.complemento_cobr %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="exibicao">
+            <strong>Bairro:</strong>
+            <%= @contum.bairro_cobr %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-heading">
+        <h6 class="panel-title">Entrega</h6>
+      </div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="exibicao">
+            <strong>CEP:</strong>
+            <%= @contum.cep_entr %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="exibicao">
+            <strong>Rua:</strong>
+            <%= @contum.rua_entr %>
+          </div>
+          <div class="exibicao">
+            <strong>Número:</strong>
+            <%= @contum.numero_entr %>
+          </div>
+          <div class="exibicao">
+            <strong>Complemento:</strong>
+            <%= @contum.complemento_entr %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="exibicao">
+            <strong>Bairro:</strong>
+            <%= @contum.bairro_entr %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

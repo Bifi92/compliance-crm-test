@@ -2,6 +2,14 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+// bloco de exibição na página show
+.exibicao{
+  display: inline-block;
+  vertical-align: top;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
 // make all images responsive by default
 img {
   @extend .img-responsive;
