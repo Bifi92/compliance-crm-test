@@ -1,4 +1,5 @@
 class Contato < ActiveRecord::Base
+  extend FriendlyId
 
   belongs_to :contum
   
@@ -32,6 +33,8 @@ class Contato < ActiveRecord::Base
   validates :email_pessoal, :email_corporativo, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i}, :allow_blank => true  
 
   scope :by_user_id, -> (proprietario_user_id) { where(:proprietario_user_id => proprietario_user_id) }
+
+  friendly_id :nome, use: :slugged  
 
   def to_s
     "#{nome} #{sobrenome}".strip

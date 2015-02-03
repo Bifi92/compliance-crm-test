@@ -45,7 +45,7 @@ class ContaController < ApplicationController
   private
     def set_contum
       begin
-        @contum = Contum.find(params[:id])
+        @contum = Contum.friendly.find(params[:id])
       rescue
         render_404
       end

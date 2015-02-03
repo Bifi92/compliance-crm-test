@@ -7,11 +7,6 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
-group :development, :test do
-  gem 'byebug'
-  gem 'web-console', '~> 2.0'
-  gem 'spring'
-end
 gem 'bootstrap-sass'
 gem 'devise'
 gem 'high_voltage'
@@ -19,6 +14,12 @@ gem 'pundit'
 gem 'rails_admin'
 gem 'simple_form'
 gem 'therubyracer', :platform=>:ruby
+gem 'friendly_id', '~> 5.1.0'
+group :development, :test do
+  gem 'byebug'
+  gem 'web-console', '~> 2.0'
+  gem 'spring'
+end
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]
