@@ -20,7 +20,7 @@ class CreateLeads < ActiveRecord::Migration
       t.string :classificacao
       t.text :motivo_desqualificacao
       t.string :orcamento_aprovado
-      t.string :convertido
+      t.boolean :convertido, :default => false
       t.date :data_da_conversao
       t.string :fax
       t.string :celular
@@ -29,10 +29,10 @@ class CreateLeads < ActiveRecord::Migration
       t.string :email
       t.string :recusar_emails
       t.string :site
-      t.string :qtde_funcionarios
-      t.string :qtde_cnpj
+      t.integer :qtde_funcionarios
+      t.integer :qtde_cnpj
       t.string :setor
-      t.string :receita_anual
+      t.float :receita_anual
       t.text :tipo_interesse
       t.text :produtos_interesse
 

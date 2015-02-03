@@ -5,11 +5,11 @@ class CreateConta < ActiveRecord::Migration
       t.string :razao_social
       t.string :fantasia
       t.string :cpf_cnpj
-      t.string :qtde_funcionarios
+      t.integer :qtde_funcionarios
       t.string :propriedade
       t.string :tipo_conta
       t.string :setor
-      t.string :receita_anual
+      t.float :receita_anual
       t.string :fax
       t.string :telefone
       t.string :email_nfe
