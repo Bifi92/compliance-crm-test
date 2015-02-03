@@ -13,11 +13,11 @@
   <tbody>
     <% @leads.each do |lead| %>
       <tr>
-        <td><%= lead.to_s %></td>
-        <td><%= lead.empresa %></td>
-        <td><%= lead.status %></td>
-        <td><%= lead.telefone %></td>
-        <td><%= lead.celular %></td>
+        <td><%= link_to lead.to_s, lead %></td>
+        <td><%= link_to_unless lead.empresa.nil?, lead.empresa, lead %></td>
+        <td><%= link_to_unless lead.status.nil?, lead.status, lead %></td>
+        <td><%= link_to_unless lead.telefone.nil?, lead.telefone %></td>
+        <td><%= link_to_unless lead.celular.nil?, lead.celular %></td>
         <td>
           <%= link_to 'Ver', lead, :class => 'btn btn-default btn-sm' %>
           <%= link_to 'Editar', edit_lead_path(lead), :class => 'btn btn-default btn-sm' %>
