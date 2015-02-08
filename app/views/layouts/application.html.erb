@@ -21,9 +21,18 @@
       </div>
     </main> 
     <div class="panel-footer">
-        <div class="container">
+      <div class="container">
+        <strong>Links</strong>
+        <li>
+          <a href="http://54.207.78.3/moodle/">EAD Compliance</a>
+        </li>
+        <li>
+          <a href="http://www.compliancefiscal.com.br">compliance Fiscal</a>
+        </li>
+        <% if user_signed_in? %>
           <li><%= link_to 'Sobre', page_path('about') %></li>
-        </div>
+        <% end %>
+      </div>
     </div>
   </body>
 </html>

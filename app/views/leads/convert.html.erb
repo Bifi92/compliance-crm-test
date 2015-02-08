@@ -6,11 +6,11 @@
     <div class="form-inputs">
       <div class="input-group input-group-sm">
         <%= simple_form_for :convert, {url: convert_lead_path} do |f| %>
-          <%= f.input :proprietario_user_id, :collection => User.all, :label_method => :name, :value_method => :id, :selected => @lead.proprietario_user_id, :label => 'Proprietário', :include_blank => false %>
+          <%= f.input :proprietario_user_id, :collection => User.all, :value_method => :id, :selected => @lead.proprietario_user_id, :label => 'Proprietário', :include_blank => false, :required => false %>
 
           <%= f.input :eniar, as: :boolean, :label => 'Enviar e-mail ao proprietário?' %>
 
-          <%= f.input :conta_id, :collection => Contum.all, prompt: 'Selecionar Conta', :label_method => :nome, :value_method => :id, :label => 'Conta', :include_blank => false %>
+          <%= f.input :conta_id, :collection => Contum.all, prompt: 'Selecionar Conta', :value_method => :id, :label => 'Conta', :include_blank => false, :required => false %>
           <p class="help-block">
             <i>Se nenhuma conta for atribuída, será criado uma nova conta com base na empresa do lead<i> - <%= "#{@lead.empresa}" %>
           </p>
