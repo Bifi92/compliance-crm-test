@@ -65,7 +65,7 @@ ActiveRecord::Schema.define(version: 20150130195513) do
     t.string   "slug"
   end
 
-  add_index "conta", ["slug"], name: "index_conta_on_slug"
+  add_index "conta", ["slug"], name: "index_conta_on_slug", unique: true
 
   create_table "contatos", force: :cascade do |t|
     t.integer  "contum_id"
@@ -202,7 +202,7 @@ ActiveRecord::Schema.define(version: 20150130195513) do
   add_index "leads", ["cidade_id"], name: "index_leads_on_cidade_id"
   add_index "leads", ["country_id"], name: "index_leads_on_country_id"
   add_index "leads", ["estado_id"], name: "index_leads_on_estado_id"
-  add_index "leads", ["slug"], name: "index_leads_on_slug"
+  add_index "leads", ["slug"], name: "index_leads_on_slug", unique: true
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
